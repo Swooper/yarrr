@@ -1,0 +1,14 @@
+type DynamicConstructionsDemo_Stone
+{
+	class = MapObject
+	allowEditorCreate = True
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = ".\\DynamicConstructionsDemo_Stone.mesh"
+			castDynamicShadows = True
+			collision = True
+		}
+	}
+}

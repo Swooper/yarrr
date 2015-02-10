@@ -1,0 +1,266 @@
+type = GameMap
+uin = 2
+classPrompt = GameMap
+gameMusic = "Sounds\\Music\\Game.ogg"
+windDirection = 0
+windSpeed = 1
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+ambientLight = 0.2 0.2 0.2
+editorCameraPosition = -8.682034 25.92202 3.334575
+editorCameraDirection = 6.013057 -0.1927605
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+logicSystemManager = 3
+staticBatchingRenderingEnabled = False
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+shadowTechnique = ShadowmapHigh
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+dataForEditor
+{
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 3
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll\r\n\r\nXilium.CefGlue.dll\r\nWebBrowserControl.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 4
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 4
+		tags
+		{
+		}
+		entity
+		{
+			type = LogicEntityClass
+			uin = 5
+			subscriptionsToDeletionEvent = 12
+			entityClassName = Terminal
+			className = Terminal_0
+			customScriptCodeCreated = False
+			tags
+			{
+			}
+			entity
+			{
+				type = LogicScriptMethod
+				uin = 6
+				code = "EditBox addressBox = (EditBox)Owner.MainControl.Controls[\"Address\"];\r\nButton goButton = (Button)Owner.MainControl.Controls[\"Go\"];\r\nEngine.UISystem.WebBrowserControl browser = (Engine.UISystem.WebBrowserControl)Owner.MainControl.Controls[\"WebBrowser\"];\r\nButton neoaxisButton = (Button)Owner.MainControl.Controls[\"neoaxis_com\"];\r\nButton googleButton = (Button)Owner.MainControl.Controls[\"google_com\"];\r\nButton fileTestButton = (Button)Owner.MainControl.Controls[\"FileTest\"];\r\n\r\naddressBox.PreKeyDown += delegate(KeyEvent e, ref bool handled)\r\n{\r\n\tif(e.Key == EKeys.Return)\r\n\t{\r\n\t\tbrowser.LoadURL(addressBox.Text);\r\n\t\taddressBox.Unfocus();\r\n\t\thandled = true;\r\n\t}\r\n};\r\n\r\ngoButton.Click += delegate(Button sender)\r\n{\r\n\tbrowser.LoadURL(addressBox.Text);\r\n};\r\n\r\nbrowser.LoadStart += delegate(object sender, LoadStartEventArgs e)\r\n{\r\n\t//addressBox.Text = e.Frame.Url;\r\n};\r\n\r\nneoaxisButton.Click += delegate(Button sender)\r\n{\r\n\tbrowser.LoadURL(\"http://www.neoaxis.com/\");\r\n};\r\n\r\ngoogleButton.Click += delegate(Button sender)\r\n{\r\n\tbrowser.LoadURL(\"http://www.google.com/\");\r\n};\r\n\r\nfileTestButton.Click += delegate(Button sender)\r\n{\r\n\tbrowser.LoadFileByVirtualFileName(\"Maps\\\\WebBrowserDemo\\\\Files\\\\FileTest.html\");\r\n};\r\n"
+				methodName = PostCreated
+				returnType = System.Void
+				parameters = 7
+				isEntityEventMethod = True
+				tags
+				{
+				}
+				entity
+				{
+					type = LogicParameter
+					uin = 7
+					parameterType = System.Boolean
+					parameterName = loaded
+					tags
+					{
+					}
+				}
+			}
+		}
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 8
+	classPrompt = HeightmapTerrain
+	enabled = True
+	position = 0 0 -50
+	horizontalSize = 1000
+	dataDirectory = HeightmapTerrain
+	masksSize = 1024
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 16
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 3
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = base
+			baseMap = "Maps\\WebBrowserDemo\\Textures\\CellsDiffuse.dds"
+			baseScale = 2
+			detailScale = 2
+			baseNormalMap = "Maps\\WebBrowserDemo\\Textures\\CellsNormals.jpg"
+		}
+		item
+		{
+			name = second
+			baseMap = "Types\\Base\\Terrain\\DefaultLayer1Base.jpg"
+			baseScale = 10
+			detailMap = "Types\\Base\\Terrain\\DefaultLayer1Detail.jpg"
+			detailScale = 2
+		}
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 9
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = -5.08011 22.99157 0.0428693
+	name = SpawnPoint_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Light
+	uin = 10
+	classPrompt = Light
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 0.7843138 0.7843138 0.7843138
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 10.03242 31.82752 9.19766
+	rotation = -0.3711055 0.4771912 0.1160896 0.7880942
+	name = Light_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 11
+	classPrompt = Fog
+	enabled = True
+	mode = Exp2
+	color = 0.627451 0.627451 0.627451
+	expDensity = 0.01
+	tags
+	{
+	}
+}
+entity
+{
+	type = Terminal
+	uin = 12
+	classPrompt = Terminal
+	subscriptionsToDeletionEvent = 5
+	initialControl = "Maps\\WebBrowserDemo\\Files\\WebBrowserExampleTerminal.gui"
+	healthFactorAtBeginning = 1
+	position = 2.031926 24.71837 1.737739
+	rotation = 0 0 -0.9986935 0.05110234
+	name = Terminal_0
+	logicClass = 5
+	tags
+	{
+	}
+}
+entity
+{
+	type = HangingBillboard
+	uin = 13
+	classPrompt = GameGuiObject
+	initialControl = "Maps\\WebBrowserDemo\\Files\\WebBrowserExamplePlacard.gui"
+	healthFactorAtBeginning = 1
+	position = 6.964464 18.26461 2.218452
+	rotation = 0 0 -0.9842264 -0.1769134
+	name = Placard_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = SubmachineGunItem
+	uin = 14
+	classPrompt = WeaponItem
+	respawnTime = 10
+	healthFactorAtBeginning = 1
+	position = -13.39104 8.441133 0.4234085
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 15
+	classPrompt = SkyBox
+	enabled = True
+	color = 1 1 1
+	power = 1
+	tags
+	{
+	}
+}

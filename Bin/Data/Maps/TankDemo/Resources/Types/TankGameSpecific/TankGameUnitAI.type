@@ -1,0 +1,7 @@
+type TankGameUnitAI
+{
+	class = TankGameUnitAI
+	notifyAlliesRadius = 70
+	creatableInMapEditor = False
+	networkType = ServerOnly
+}

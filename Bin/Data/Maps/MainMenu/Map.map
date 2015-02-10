@@ -1,0 +1,6491 @@
+type = GameMap
+uin = 2
+classPrompt = GameMap
+gameMusic = "Maps\\VillageDemo\\Sounds\\Background.ogg"
+windDirection = 0
+windSpeed = 1.5
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+ambientLight = 0.2588235 0.282353 0.4
+editorCameraPosition = 211.3671 74.53616 57.49288
+editorCameraDirection = 3.025857 -0.5097445
+shadowColor = 0.8 0.8 0.8
+shadowFarDistance = 70
+shadowPSSMSplitFactors = 0.1 0.4
+nearFarClipDistance = 0.1 30000
+logicSystemManager = 3
+staticBatchingRenderingEnabled = False
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+shadowTechnique = ShadowmapMedium
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+dataForEditor
+{
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+	layer
+	{
+		name = Sounds
+	}
+	layer
+	{
+		name = Water
+		allowSelect = False
+	}
+	layer
+	{
+		name = Trees
+	}
+	layer
+	{
+		name = Rocks
+	}
+	layer
+	{
+		name = Buildings
+	}
+	layer
+	{
+		name = Bridge
+	}
+	layer
+	{
+		name = Splash
+	}
+	layer
+	{
+		name = Shrubs
+	}
+	layer
+	{
+		name = DynamicObjects
+	}
+	layer
+	{
+		name = Cameras
+		layer
+		{
+			name = 1_curve
+		}
+		layer
+		{
+			name = 2_curve
+		}
+		layer
+		{
+			name = 3_curve
+		}
+		layer
+		{
+			name = 4_curve
+		}
+		layer
+		{
+			name = 5_curve
+		}
+		layer
+		{
+			name = 0_curve
+		}
+	}
+	layer
+	{
+		name = Ocean
+		allowSelect = False
+	}
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 3
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 4
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 4
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 5
+	classPrompt = HeightmapTerrain
+	subscriptionsToDeletionEvent = 343
+	enabled = True
+	position = 0 0 -50
+	horizontalSize = 700
+	dataDirectory = HeightmapTerrain
+	masksSize = 1024
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 64
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = True
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = True
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 3
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 50 + level * 100
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = base
+			baseMap = "Maps\\VillageDemo\\Terrain\\Grass_Diffuse.dds"
+			baseScale = 10
+			detailScale = 2
+			baseNormalMap = "Maps\\VillageDemo\\Terrain\\Grass_Normal.dds"
+		}
+		item
+		{
+			name = second
+			baseMap = "Maps\\VillageDemo\\Terrain\\Sand_Diffuse.dds"
+			baseScale = 10
+			detailScale = 2
+			baseNormalMap = "Maps\\VillageDemo\\Terrain\\Rock_Normal.dds"
+		}
+		item
+		{
+			name = stone
+			baseMap = "Maps\\VillageDemo\\Terrain\\Rock_Diffuse.dds"
+			baseScale = 35
+			detailMap = "Maps\\VillageDemo\\Terrain\\Rock_Detail.dds"
+			detailScale = 2
+			baseNormalMap = "Maps\\VillageDemo\\Terrain\\Rock_Normal.dds"
+		}
+	}
+}
+entity
+{
+	type = WaterPlane
+	uin = 6
+	classPrompt = WaterPlane
+	size = 100000 100000
+	position = 100 500 0
+	segments = 50 50
+	renderQueueGroup = Queue3
+	reflectionLevel = None
+	physicsHeight = 0
+	deepColor = 0 0.3803922 0.6392157
+	shallowColor = 0 0 0
+	reflectionColor = 0.8274511 1 0.8000001
+	reflectionTextureSize = HalfOfFrameBuffer
+	visible = True
+	fixedPipelineMap = "Base\\Types\\Water Plane\\WaterFixedPipeline.jpg"
+	fixedPipelineMapTiling = 10
+	fixedPipelineColor = 0 0.3921569 0.6666667
+	useHDRTexture = False
+	allowFog = False
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 7
+	classPrompt = StaticMesh
+	position = 61.30521 64.96503 29.80609
+	rotation = 0.1463677 0.08699837 -0.918038 -0.3580697
+	scale = 0.4761905 0.4761905 0.4761905
+	name = StaticMesh_rock_006_0
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_006.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 8
+	classPrompt = StaticMesh
+	position = 64.04802 84.12357 23.42885
+	rotation = 0 0 -0.8724437 0.4887146
+	scale = 1.859 1.859 1.859
+	name = StaticMesh_rock_002_2
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 9
+	classPrompt = StaticMesh
+	position = 63.81115 83.88394 22.0174
+	rotation = -0.1453814 -0.1956317 -0.7784294 0.5784807
+	scale = 2.08 2.08 2.08
+	name = StaticMesh_rock_001_1
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 10
+	classPrompt = StaticMesh
+	position = 66.50327 75.30264 26.6069
+	rotation = 0.2215554 0.3955163 -0.7776406 0.435609
+	scale = 1.43 1.43 1.43
+	name = StaticMesh_rock_002_5
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 11
+	classPrompt = StaticMesh
+	position = 68.51472 73.99991 33.0248
+	rotation = 0 0 -0.8894362 -0.4570593
+	scale = 0.715 0.715 0.715
+	name = StaticMesh_rock_002_6
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 12
+	classPrompt = StaticMesh
+	position = 101.2372 -30.46119 35.4796
+	rotation = 0 0 -0.8724437 0.4887146
+	scale = 1.1 1.1 1.1
+	name = StaticMesh_rock_002_7
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 13
+	classPrompt = StaticMesh
+	position = 107.1403 -39.31203 34.5225
+	rotation = 0 0 0.7194917 0.6945009
+	scale = 1.87 1.87 1.87
+	name = StaticMesh_rock_002_9
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 14
+	classPrompt = StaticMesh
+	position = 108.8903 -55.06034 33.78186
+	rotation = -0.05465417 -0.01695846 0.6021026 -0.7963652
+	scale = 3.528 3.528 3.528
+	name = StaticMesh_rock_001_6
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 15
+	classPrompt = StaticMesh
+	position = 57.07192 81.34719 28.16302
+	rotation = 0 0 -0.9987371 0.05024208
+	name = StaticMesh_Shrub_016_0
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 16
+	classPrompt = StaticMesh
+	position = 61.55317 83.30551 34.60201
+	rotation = 0 0 -0.9972643 -0.0739185
+	name = StaticMesh_Shrub_017_4
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 17
+	classPrompt = StaticMesh
+	position = 58.45517 88.41785 32.19506
+	rotation = 0 0 -0.2667423 -0.9637679
+	name = StaticMesh_Shrub_017_5
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 18
+	classPrompt = StaticMesh
+	position = 63.08469 58.5361 27.71421
+	rotation = 0 0 -0.7933928 -0.60871
+	name = StaticMesh_Shrub_017_69
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 19
+	classPrompt = StaticMesh
+	position = 113.0234 67.72053 58.20377
+	rotation = 0 0 -0.9574854 0.2884816
+	name = StaticMesh_meshU3D_033_1
+	editorLayer = "Root Layer\\Buildings"
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_033.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 20
+	classPrompt = StaticMesh
+	position = 118.3475 -32.74043 42.34246
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.244 2.244 2.244
+	name = StaticMesh_rock_002_12
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 21
+	classPrompt = StaticMesh
+	position = 57.19868 60.4521 27.69741
+	rotation = 0 0 -0.8894362 -0.4570593
+	scale = 0.5107143 0.5107143 0.5107143
+	name = StaticMesh_rock_002_13
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 22
+	classPrompt = StaticMesh
+	position = 31.82401 146.7137 -1.685799
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.493333 2.493333 2.493333
+	name = StaticMesh_rock_002_14
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 23
+	classPrompt = StaticMesh
+	position = 88.94961 210.4145 -1.804283
+	rotation = 0 0 -0.4028681 -0.9152581
+	scale = 4.7 4.7 4.7
+	name = StaticMesh_rock_009_0
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_009.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 24
+	classPrompt = StaticMesh
+	position = 18.19577 153.52 -1.924463
+	rotation = -0.05465417 -0.01695846 0.6021026 -0.7963652
+	scale = 1.395692 1.395692 1.395692
+	name = StaticMesh_rock_001_11
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 25
+	classPrompt = StaticMesh
+	position = -6.176611 150.7208 -1.924463
+	rotation = -0.01307666 0.05571058 0.7520947 0.6565657
+	scale = 1.2096 1.2096 1.2096
+	name = StaticMesh_rock_001_12
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 26
+	classPrompt = StaticMesh
+	position = 69.21892 87.22369 33.27086
+	rotation = -0.2945667 0.3446019 0.1399917 0.880274
+	scale = 1.43 1.43 1.43
+	name = StaticMesh_rock_002_15
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 27
+	classPrompt = StaticMesh
+	position = 53.86924 72.69797 26.08242
+	rotation = 0.01236034 0.05587387 0.3932321 0.9176566
+	scale = 0.5 0.5 0.5
+	name = StaticMesh_rock_001_13
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 28
+	classPrompt = StaticMesh
+	position = 63.45347 58.02497 28.82955
+	rotation = 0.01236034 0.05587387 0.3932321 0.9176566
+	scale = 0.3125 0.3125 0.3125
+	name = StaticMesh_rock_001_14
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 29
+	classPrompt = StaticMesh
+	position = 79.98753 8.038497 30.40833
+	rotation = 0.01236034 0.05587387 0.3932321 0.9176566
+	scale = 0.8521738 0.8521738 0.8521738
+	name = StaticMesh_rock_001_15
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 30
+	classPrompt = StaticMesh
+	position = 115.7351 53.17979 57.57933
+	rotation = 0 0 0.03626097 -0.9993424
+	name = StaticMesh_meshU3D_000_1
+	editorLayer = "Root Layer\\Buildings"
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_000.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 31
+	classPrompt = StaticMesh
+	position = 133.5278 81.40564 56.45382
+	rotation = 0 0 -0.1670309 0.9859517
+	name = StaticMesh_meshU3D_007_1
+	editorLayer = "Root Layer\\Buildings"
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_007.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 32
+	classPrompt = MapObject
+	position = 62.9892 57.95451 29.55668
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = Splash_9
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 33
+	classPrompt = MapObject
+	position = 55.48721 82.33547 30.54144
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = Splash_12
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 34
+	classPrompt = MapObject
+	position = 57.12725 77.89619 30.54144
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = Splash_13
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 35
+	classPrompt = StaticMesh
+	position = 103.1164 129.4848 -11.25936
+	rotation = -0.05465417 -0.01695846 0.6021026 -0.7963652
+	scale = 3.48923 3.48923 3.48923
+	name = StaticMesh_rock_001_16
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 36
+	classPrompt = StaticMesh
+	position = 99.50291 186.8606 -8.030575
+	rotation = -0.05465417 -0.01695846 0.6021026 -0.7963652
+	scale = 6.3504 6.3504 6.3504
+	name = StaticMesh_rock_001_17
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 37
+	classPrompt = StaticMesh
+	position = 7.831718 105.4777 -0.9140526
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 4.238667 4.238667 4.238667
+	name = StaticMesh_rock_002_17
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 38
+	classPrompt = StaticMesh
+	position = 81.20834 104.8246 -11.25936
+	rotation = -0.03483196 0.04540267 0.9555723 0.289148
+	scale = 5.233845 5.233845 5.233845
+	name = StaticMesh_rock_001_18
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 39
+	classPrompt = StaticMesh
+	position = 93.00346 123.0394 9.436764
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.493333 2.493333 2.493333
+	name = StaticMesh_rock_002_18
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 40
+	classPrompt = StaticMesh
+	position = 85.44102 131.0606 -10.24895
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.493333 2.493333 2.493333
+	name = StaticMesh_rock_002_19
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 41
+	classPrompt = StaticMesh
+	position = 27.39378 239.5567 -1.277752
+	rotation = -0.01307666 0.05571058 0.7520947 0.6565657
+	scale = 1.2096 1.2096 1.2096
+	name = StaticMesh_rock_001_19
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 42
+	classPrompt = StaticMesh
+	position = 128.0374 131.0658 -17.3247
+	rotation = 0 0 -0.1905719 -0.9816731
+	scale = 3.490666 3.490666 3.490666
+	name = StaticMesh_rock_002_20
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 43
+	classPrompt = MapObject
+	position = 81.49475 11.44752 32.52434
+	rotation = 0 0 0.1141336 0.9934653
+	name = Splash2_7
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 44
+	classPrompt = MapObject
+	position = 70.04095 38.41207 32.46779
+	rotation = 0 0 0.110242 0.9939047
+	scale = 1 1.228533 1
+	name = Splash2_8
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 45
+	classPrompt = MapObject
+	position = 67.93099 57.31262 30.2152
+	rotation = 0 0 -0.005095531 0.9999869
+	name = Splash2_10
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 46
+	classPrompt = MapObject
+	position = 65.05001 71.33575 30.2152
+	rotation = 0 0 0.08245683 0.9965945
+	name = Splash2_11
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 47
+	classPrompt = MapObject
+	position = 61.08991 81.26466 30.2152
+	rotation = 0 0 0.04061573 0.9991748
+	name = Splash2_12
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 48
+	classPrompt = StaticMesh
+	position = 107.2071 62.83271 58.62262
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_020_1
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_020.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 49
+	classPrompt = StaticMesh
+	position = 107.4401 62.86577 58.29654
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_021_2
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_021.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 50
+	classPrompt = StaticMesh
+	position = 106.985 62.92791 58.33312
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_067_1
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_067.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 51
+	classPrompt = StaticMesh
+	position = 106.5894 62.43003 58.62262
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_020_2
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_020.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 52
+	classPrompt = StaticMesh
+	position = 106.3673 62.52522 58.33312
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_067_2
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_067.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 53
+	classPrompt = StaticMesh
+	position = 106.8224 62.46309 58.29654
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_021_3
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_021.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 54
+	classPrompt = StaticMesh
+	position = 106.9609 62.55338 58.65507
+	rotation = 0 0 0.9585655 -0.2848728
+	name = StaticMesh_meshU3D_021_4
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_021.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 55
+	classPrompt = MapObject
+	position = 123.3115 -12.47043 51.3576
+	rotation = 0 0 -0.8769824 -0.4805225
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 56
+	classPrompt = MapObject
+	position = 119.0577 2.163727 48.92696
+	rotation = 0 0 -0.7053924 0.7088171
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 57
+	classPrompt = MapObject
+	position = 140.4571 18.19415 50.08965
+	rotation = 0 0 -0.9872564 -0.1591376
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 58
+	classPrompt = MapObject
+	position = 153.7312 33.20239 50.29428
+	rotation = 0 0 -0.9051583 0.4250747
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 59
+	classPrompt = MapObject
+	position = 215.1772 64.74072 50.99122
+	rotation = 0 0 -0.9870815 -0.1602188
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 60
+	classPrompt = MapObject
+	position = 193.935 102.7172 49.5586
+	rotation = 0 0 -0.695722 -0.7183111
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 61
+	classPrompt = MapObject
+	position = 180.3728 67.46725 50.75763
+	rotation = 0 0 -0.4713035 -0.8819711
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 62
+	classPrompt = MapObject
+	position = 162.653 89.04974 49.98906
+	rotation = 0 0 -0.5538681 -0.8326044
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 63
+	classPrompt = MapObject
+	position = 164.1893 120.2484 58.40968
+	rotation = 0 0 -0.8285618 -0.5598977
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 64
+	classPrompt = MapObject
+	position = 237.8836 94.03503 57.69825
+	rotation = 0 0 -0.9543143 -0.2988046
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 65
+	classPrompt = MapObject
+	position = 221.1275 23.11363 59.40182
+	rotation = 0 0 -0.3433135 0.9392209
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 66
+	classPrompt = MapObject
+	position = 225.069 48.47592 52.41523
+	rotation = 0 0 -0.9196867 0.3926528
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 67
+	classPrompt = MapObject
+	position = 186.9312 30.23679 51.03855
+	rotation = 0 0 -0.108061 0.9941443
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 68
+	classPrompt = MapObject
+	position = 207.9719 86.43332 50.59442
+	rotation = 0 0 -0.7493811 -0.6621389
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 69
+	classPrompt = MapObject
+	position = 112.8732 82.62708 55.31986
+	rotation = 0 0 -0.9847719 -0.1738513
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 70
+	classPrompt = StaticMesh
+	position = 93.00819 18.05276 36.36459
+	rotation = 0.04453572 0.1543197 0.1205531 -0.979627
+	scale = 0.936 0.936 0.936
+	name = StaticMesh_rock_004_17
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 71
+	classPrompt = StaticMesh
+	position = 92.90615 14.04255 36.65305
+	rotation = 0.02517684 0.1359348 -0.2765811 -0.9509946
+	scale = 0.78 0.78 0.78
+	name = StaticMesh_rock_004_18
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 72
+	classPrompt = StaticMesh
+	position = 94.7113 20.97474 37.3003
+	rotation = 0.04673747 0.04474888 -0.1950734 -0.9786518
+	scale = 1.2 1.2 1.2
+	name = StaticMesh_Shrub_017_92
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 73
+	classPrompt = StaticMesh
+	position = 89.58279 18.03121 37.06896
+	rotation = -0.03717881 0.0529584 0.9379767 -0.3406067
+	scale = 1.2 1.2 1.2
+	name = StaticMesh_Shrub_017_93
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 74
+	classPrompt = StaticMesh
+	position = 90.54604 15.44465 37.90509
+	rotation = -0.05350736 0.03638434 0.9978174 0.01318454
+	scale = 1.2 1.2 1.2
+	name = StaticMesh_Shrub_017_94
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 75
+	classPrompt = StaticMesh
+	position = 93.29051 12.88741 40.32951
+	rotation = 0.009302491 0.06403374 0.4484778 -0.8914488
+	scale = 1.2 1.2 1.2
+	name = StaticMesh_Shrub_017_95
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 76
+	classPrompt = StaticMesh
+	position = 91.45181 12.95426 38.91836
+	rotation = 0.06464564 0.002792105 -0.7922696 -0.6067307
+	scale = 1.2 1.2 1.2
+	name = StaticMesh_Shrub_017_96
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 77
+	classPrompt = StaticMesh
+	position = 94.0174 40.41088 37.11778
+	rotation = -0.1124338 0.2010394 -0.5921014 -0.7722422
+	scale = 0.936 0.936 0.936
+	name = StaticMesh_rock_004_19
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 78
+	classPrompt = StaticMesh
+	position = 95.09634 39.0569 40.58204
+	rotation = -0.1235989 0.0528527 0.09096882 -0.9867397
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_97
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 79
+	classPrompt = StaticMesh
+	position = 91.32135 43.37284 37.48315
+	rotation = -0.1202455 0.186011 -0.233627 -0.9467628
+	scale = 1.1232 1.1232 1.1232
+	name = StaticMesh_rock_004_20
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 80
+	classPrompt = StaticMesh
+	position = 90.53581 46.38066 39.11107
+	rotation = -0.06490022 0.1177202 -0.5355132 -0.8337599
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_98
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 81
+	classPrompt = StaticMesh
+	position = 88.85958 40.89497 37.65606
+	rotation = -0.1261701 -0.0463812 0.7433419 -0.6552657
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_99
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 82
+	classPrompt = StaticMesh
+	position = 91.34331 39.53737 38.20858
+	rotation = -0.1016083 -0.08801063 0.9270631 -0.3499777
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_100
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 83
+	classPrompt = StaticMesh
+	position = 93.7192 38.17046 38.9406
+	rotation = 0.02889632 0.1312825 -0.9525076 -0.2732391
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_101
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 84
+	classPrompt = StaticMesh
+	position = 87.44601 69.79217 35.35453
+	rotation = 0 0 -0.4406294 0.8976892
+	scale = 1.69 1.69 1.69
+	name = StaticMesh_rock_002_22
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 85
+	classPrompt = StaticMesh
+	position = 143.718 118.4511 44.3955
+	rotation = 0.03266458 0.01862349 0.06128015 -0.9974124
+	scale = 1.1232 1.1232 1.1232
+	name = StaticMesh_rock_004_21
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 86
+	classPrompt = StaticMesh
+	position = 144.1216 114.4505 44.48315
+	rotation = -0.03924766 0.01107659 -0.327517 -0.9439651
+	scale = 0.936 0.936 0.936
+	name = StaticMesh_rock_004_22
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 87
+	classPrompt = StaticMesh
+	position = 140.6369 118.0154 45.99152
+	rotation = 0.0819795 -0.01475546 0.9145349 -0.3958389
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_102
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 88
+	classPrompt = StaticMesh
+	position = 145.6142 113.2617 47.85324
+	rotation = 0.04950069 -0.06699292 0.393523 -0.9155338
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_103
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 89
+	classPrompt = StaticMesh
+	position = 143.4638 113.1478 46.99339
+	rotation = -0.05659594 -0.06111681 -0.8261726 -0.5572263
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_104
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 90
+	classPrompt = StaticMesh
+	position = 145.2941 121.5283 44.99638
+	rotation = -0.002207898 -0.08326756 -0.2532119 -0.9638184
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_105
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 91
+	classPrompt = StaticMesh
+	position = 142.0587 115.5393 46.39695
+	rotation = 0.08189907 0.01519546 0.9954271 -0.04676884
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_106
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 92
+	classPrompt = StaticMesh
+	position = 128.6169 98.57848 35.04827
+	rotation = 0 0 -0.8724437 0.4887146
+	scale = 1.859 1.859 1.859
+	name = StaticMesh_rock_002_24
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 93
+	classPrompt = StaticMesh
+	position = 118.8956 92.51131 42.41084
+	rotation = -0.07092175 0.1110734 -0.2913235 -0.9475043
+	scale = 0.936 0.936 0.936
+	name = StaticMesh_rock_004_23
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 94
+	classPrompt = StaticMesh
+	position = 120.4355 99.34795 44.03019
+	rotation = -0.04516369 0.01283419 -0.2195814 -0.9744641
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_107
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 95
+	classPrompt = StaticMesh
+	position = 115.4526 96.16391 43.80059
+	rotation = -0.01950651 -0.04270805 0.9301366 -0.3642014
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_108
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 96
+	classPrompt = StaticMesh
+	position = 119.7143 90.80487 45.78966
+	rotation = -0.04349739 -0.01767645 0.4265828 -0.9032298
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_109
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 97
+	classPrompt = StaticMesh
+	position = 116.6165 93.54208 44.09811
+	rotation = -0.003139212 -0.04684682 0.9988297 -0.01165809
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_110
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 98
+	classPrompt = StaticMesh
+	position = 117.7374 90.98277 44.59099
+	rotation = -0.02547191 0.03944188 -0.8079239 -0.5874145
+	scale = 1.44 1.44 1.44
+	name = StaticMesh_Shrub_017_111
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 99
+	classPrompt = StaticMesh
+	position = 118.7812 96.51393 42.78678
+	rotation = -0.03462062 0.09572915 0.1035686 -0.9893999
+	scale = 1.1232 1.1232 1.1232
+	name = StaticMesh_rock_004_24
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 100
+	classPrompt = StaticMesh
+	position = 108.0579 115.2985 31.57199
+	rotation = 0.01875249 0.2197689 0.9310648 0.2906341
+	scale = 1.610414 1.610414 1.610414
+	name = StaticMesh_rock_001_23
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 101
+	classPrompt = StaticMesh
+	position = 98.1036 80.82189 38.62314
+	rotation = 0.06878836 -0.09256469 -0.7972804 0.5924895
+	scale = 2.08 2.08 2.08
+	name = StaticMesh_rock_001_24
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 102
+	classPrompt = StaticMesh
+	position = 182.9594 110.4782 47.9855
+	rotation = -0.08032531 0.03993288 -0.8816722 -0.4632581
+	scale = 0.585 0.585 0.585
+	name = StaticMesh_rock_004_25
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 103
+	classPrompt = StaticMesh
+	position = 175.9986 112.0436 48.89664
+	rotation = 0.006596033 -0.007442034 -0.8451896 -0.5343742
+	scale = 0.9 0.9 0.9
+	name = StaticMesh_Shrub_017_112
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 104
+	classPrompt = StaticMesh
+	position = 179.1881 107.0631 49.10006
+	rotation = 0.008352667 0.005396683 0.4006297 -0.9161867
+	scale = 0.9 0.9 0.9
+	name = StaticMesh_Shrub_017_113
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 105
+	classPrompt = StaticMesh
+	position = 184.3309 111.3836 51.49231
+	rotation = 0.009778892 -0.001807031 -0.3373636 -0.9413224
+	scale = 0.9 0.9 0.9
+	name = StaticMesh_Shrub_017_114
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 106
+	classPrompt = StaticMesh
+	position = 181.7692 108.2394 49.62106
+	rotation = 0.005903834 0.008002233 0.698796 -0.7152525
+	scale = 0.9 0.9 0.9
+	name = StaticMesh_Shrub_017_115
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 107
+	classPrompt = StaticMesh
+	position = 184.2692 109.3773 50.33146
+	rotation = 4.677323E-05 -0.009944323 -0.987699 0.1560545
+	scale = 0.9 0.9 0.9
+	name = StaticMesh_Shrub_017_116
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 108
+	classPrompt = StaticMesh
+	position = 178.9391 110.3649 47.97487
+	rotation = -0.05212892 0.07281472 -0.6309223 -0.7706609
+	scale = 0.702 0.702 0.702
+	name = StaticMesh_rock_004_26
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_004.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 109
+	classPrompt = StaticMesh
+	position = 287.5256 119.7328 88.45985
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.244 2.244 2.244
+	name = StaticMesh_rock_002_25
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 110
+	classPrompt = StaticMesh
+	position = 255.0489 86.68306 57.05027
+	rotation = 0 0 -0.500425 0.8657798
+	scale = 2.244 2.244 2.244
+	name = StaticMesh_rock_002_26
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 111
+	classPrompt = StaticMesh
+	position = 253.4495 71.16742 48.91791
+	rotation = 0 0 -0.8026358 0.5964693
+	scale = 2.288 2.288 2.288
+	name = StaticMesh_rock_001_27
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 112
+	classPrompt = MapObject
+	position = 205.6972 41.80609 51.37179
+	rotation = 0 0 -0.2359525 -0.9717646
+	name = Tree02A_0
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 113
+	classPrompt = MapObject
+	position = 163.4702 101.6201 48.63325
+	rotation = 0 0 -0.5556764 0.8313987
+	name = Tree02A_1
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 114
+	classPrompt = MapObject
+	position = 174.2236 123.7256 58.58485
+	rotation = 0 0 -0.4675118 -0.8839868
+	name = Tree02A_2
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 115
+	classPrompt = MapObject
+	position = 249.6181 60.19202 57.76884
+	rotation = 0 0 -0.8114501 0.5844218
+	name = Tree02A_3
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 116
+	classPrompt = MapObject
+	position = 181.6402 19.97079 52.41229
+	rotation = 0 0 -0.6332518 0.7739458
+	name = Tree02A_4
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 117
+	classPrompt = MapObject
+	position = 135.8907 -12.37695 49.78746
+	rotation = 0 0 -0.7069331 -0.7072804
+	name = Tree02A_5
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 118
+	classPrompt = MapObject
+	position = 101.3432 13.06451 48.56458
+	rotation = 0 0 -0.9637493 -0.2668095
+	name = Tree02A_6
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 119
+	classPrompt = MapObject
+	position = 82.90604 44.90497 36.42094
+	rotation = 0 0 -0.9664906 -0.2567021
+	name = Tree02A_7
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 120
+	classPrompt = MapObject
+	position = 183.1547 103.7414 47.59566
+	rotation = 0 0 -0.9759231 -0.2181147
+	name = Tree03A_2
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 121
+	classPrompt = MapObject
+	position = 221.392 72.94269 51.55339
+	rotation = 0 0 -0.2775351 -0.9607155
+	name = Tree03A_3
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 122
+	classPrompt = MapObject
+	position = 186.3552 89.59561 51.77232
+	rotation = 0 0 -0.3799476 0.925008
+	name = Tree04A_0
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 123
+	classPrompt = MapObject
+	position = 155.2651 10.35629 55.87687
+	rotation = 0 0 -0.4520979 -0.8919684
+	name = Tree04A_1
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 124
+	classPrompt = MapObject
+	position = 173.6414 82.76886 50.13857
+	rotation = 0 0 -0.3498965 -0.9367884
+	name = Tree06A_0
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 125
+	classPrompt = MapObject
+	position = 163.8273 71.92468 50.64963
+	rotation = 0 0 -0.4680146 0.8837208
+	name = Tree06A_1
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 126
+	classPrompt = MapObject
+	position = 194.9446 71.90454 51.53259
+	rotation = 0 0 -0.04581829 0.9989498
+	name = Tree06A_2
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 127
+	classPrompt = MapObject
+	position = 203.2626 56.36615 51.61125
+	rotation = 0 0 -0.9425352 -0.3341068
+	name = Tree06A_3
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 128
+	classPrompt = MapObject
+	position = 177.8223 42.2832 51.50907
+	rotation = 0 0 -0.9957688 0.09189422
+	name = Tree06A_4
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 129
+	classPrompt = MapObject
+	position = 161.1216 38.15039 50.8758
+	rotation = 0 0 -0.8555683 0.51769
+	name = Tree06A_5
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 130
+	classPrompt = MapObject
+	position = 190.1584 5.714725 59.93378
+	rotation = 0 0 -0.9161763 -0.4007756
+	name = Tree06A_6
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree07A
+	uin = 131
+	classPrompt = MapObject
+	position = 135.0929 117.8239 45.83285
+	rotation = 0 0 -0.7451533 -0.6668932
+	name = Tree07A_1
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 132
+	classPrompt = MapObject
+	position = 140.3011 27.41309 49.71235
+	rotation = 0 0 -0.7645612 -0.6445511
+	name = Tree08A_0
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 133
+	classPrompt = MapObject
+	position = 137.9021 54.57025 55.87268
+	rotation = 0 0 -0.7266282 0.6870309
+	name = Tree08A_1
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 134
+	classPrompt = MapObject
+	position = 107.7879 16.04034 45.34349
+	rotation = 0 0 -0.8317278 0.5551836
+	name = Tree08A_2
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 135
+	classPrompt = MapObject
+	position = 156.8719 16.85294 53.63549
+	rotation = 0 0 -0.2972707 -0.9547933
+	name = Tree08A_3
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 136
+	classPrompt = MapObject
+	position = 192.4556 48.61685 50.68645
+	rotation = 0 0 -0.9944264 0.1054336
+	name = Tree08A_4
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 137
+	classPrompt = MapObject
+	position = 168.5353 28.14267 51.28349
+	rotation = 0 0 -0.5442795 0.838904
+	name = Tree08A_5
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 138
+	classPrompt = MapObject
+	position = 172.4425 60.17451 51.51159
+	rotation = 0 0 -0.765907 0.6429514
+	name = Tree08A_6
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 139
+	classPrompt = MapObject
+	position = 191.7742 126.4979 58.3932
+	rotation = 0 0 -0.6202657 0.7843918
+	scale = 0.7142857 0.7142857 0.7142857
+	name = Tree08A_7
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 140
+	classPrompt = MapObject
+	position = 177.3069 95.23718 49.32798
+	rotation = 0 0 -0.5845128 -0.8113845
+	name = Tree08A_8
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 141
+	classPrompt = MapObject
+	position = 167.973 -6.836578 66.83706
+	rotation = 0 0 -0.2086779 -0.9779844
+	name = Tree08A_13
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 142
+	classPrompt = MapObject
+	position = 270.9906 114.2558 89.66028
+	rotation = 0 0 -0.1460027 0.9892842
+	name = Tree08A_14
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 143
+	classPrompt = MapObject
+	position = 235.7739 114.5594 56.8227
+	rotation = 0 0 -0.5262805 0.850311
+	name = Tree08A_15
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 144
+	classPrompt = MapObject
+	position = 218.2617 120.5483 50.63234
+	rotation = 0 0 -0.1040903 -0.9945679
+	name = Tree08A_16
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 145
+	classPrompt = MapObject
+	position = 86.13898 100.9285 38.64285
+	rotation = 0 0 -0.03500643 -0.9993871
+	name = Tree08A_17
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 146
+	classPrompt = MapObject
+	position = 88.12091 18.41791 35.90089
+	rotation = 0 0 -0.9945512 -0.1042491
+	name = Tree08A_19
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 147
+	classPrompt = MapObject
+	position = 97.35684 36.86282 37.42923
+	rotation = 0 0 -0.2092266 0.9778672
+	name = Tree08A_20
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 148
+	classPrompt = StaticMesh
+	position = 162.3437 48.53782 51.47
+	rotation = 0.05819662 0.008359384 -0.9881284 0.1419351
+	name = StaticMesh_meshU3D_016_2
+	editorLayer = "Root Layer\\Buildings"
+	meshName = "Maps\\VillageDemo\\FarmModels\\Meshes\\meshU3D_016.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 149
+	classPrompt = StaticMesh
+	position = 47.67722 87.47059 1.472958
+	rotation = 0 0 -0.9971663 0.07522938
+	scale = 0.3267974 0.3267974 0.3480232
+	name = StaticMesh_Waterfalls_3_0
+	editorLayer = "Root Layer\\Water"
+	meshName = "Maps\\VillageDemo\\River\\Waterfalls_3.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 150
+	classPrompt = StaticMesh
+	position = 86.71844 -69.49744 82.21711
+	rotation = 0 0 0.9564269 -0.2919725
+	scale = 0.400377 0.5 0.4807571
+	name = StaticMesh_Waterfalls_1_0
+	editorLayer = "Root Layer\\Water"
+	meshName = "Maps\\VillageDemo\\River\\Waterfalls_1.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 151
+	classPrompt = MapObject
+	position = 213.0931 27.91498 58.7564
+	rotation = 0 0 -0.9161763 -0.4007756
+	name = Tree06A_8
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 152
+	classPrompt = StaticMesh
+	subscriptionsToDeletionEvent = 343
+	position = 225.6398 34.19238 55.30067
+	rotation = 0 0 -0.9313435 0.3641419
+	name = StaticMesh_rock_001_43
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 153
+	classPrompt = StaticMesh
+	position = 106.595 17.46841 47.45482
+	rotation = 0 0 -0.581708 -0.8133978
+	name = StaticMesh_Shrub_016_34
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 154
+	classPrompt = StaticMesh
+	position = 109.2 17.45871 47.22841
+	rotation = 0 0 -0.979135 0.2032107
+	name = StaticMesh_Shrub_016_35
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 155
+	classPrompt = StaticMesh
+	position = 109.3827 18.03607 49.31281
+	rotation = 0 0 -0.9658436 0.2591257
+	name = StaticMesh_Shrub_016_36
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 156
+	classPrompt = StaticMesh
+	position = 108.1349 14.6604 48.60822
+	rotation = 0 0 -0.8018872 -0.5974754
+	name = StaticMesh_Shrub_016_37
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 157
+	classPrompt = StaticMesh
+	position = 87.75708 19.47723 36.63744
+	rotation = 0 0 -0.7126208 -0.7015494
+	name = StaticMesh_Shrub_016_38
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 158
+	classPrompt = StaticMesh
+	position = 88.40166 16.31602 37.50142
+	rotation = 0 0 -0.7524333 -0.6586685
+	name = StaticMesh_Shrub_016_39
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 159
+	classPrompt = StaticMesh
+	position = 88.06227 17.33021 37.22577
+	rotation = 0 0 -0.9756061 0.2195282
+	name = StaticMesh_Shrub_016_40
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 160
+	classPrompt = StaticMesh
+	position = 94.62455 21.51915 38.04692
+	rotation = 0 0 -0.9624429 0.2714841
+	name = StaticMesh_Shrub_016_41
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 161
+	classPrompt = StaticMesh
+	position = 92.297 22.63012 36.56386
+	rotation = 0 0 -0.3149695 -0.9491018
+	name = StaticMesh_Shrub_016_42
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 162
+	classPrompt = StaticMesh
+	position = 83.64667 45.95483 37.82745
+	rotation = 0 0 -0.7831612 0.6218188
+	name = StaticMesh_Shrub_016_43
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 163
+	classPrompt = StaticMesh
+	position = 83.46289 47.90564 37.39648
+	rotation = 0 0 -0.1818295 0.9833301
+	name = StaticMesh_Shrub_016_44
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 164
+	classPrompt = StaticMesh
+	position = 82.25905 46.28892 37.28576
+	rotation = 0 0 -0.560471 -0.8281741
+	name = StaticMesh_Shrub_016_45
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 165
+	classPrompt = StaticMesh
+	position = 79.93854 65.27942 36.96838
+	rotation = 0 0 -0.6401478 -0.7682518
+	name = StaticMesh_Shrub_016_46
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 166
+	classPrompt = StaticMesh
+	position = 81.87109 65.78094 39.25755
+	rotation = 0 0 -0.821911 0.5696158
+	name = StaticMesh_Shrub_016_47
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 167
+	classPrompt = StaticMesh
+	position = 84.85047 65.5822 44.84889
+	rotation = 0 0 -0.8711309 -0.4910508
+	name = StaticMesh_Shrub_016_48
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 168
+	classPrompt = StaticMesh
+	position = 77.34598 67.20349 36.14242
+	rotation = 0 0 -0.6356479 -0.7719792
+	name = StaticMesh_Shrub_016_49
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 169
+	classPrompt = StaticMesh
+	position = 78.73569 71.09657 37.15602
+	rotation = 0 0 -0.6391651 -0.7690696
+	name = StaticMesh_Shrub_016_50
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 170
+	classPrompt = StaticMesh
+	position = 68.98775 71.08686 35.9503
+	rotation = 0 0 -0.6569594 -0.7539259
+	name = StaticMesh_Shrub_016_51
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 171
+	classPrompt = StaticMesh
+	position = 70.73547 72.38984 37.65687
+	rotation = 0 0 -0.9765711 -0.2151951
+	name = StaticMesh_Shrub_016_52
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 172
+	classPrompt = StaticMesh
+	position = 85.62979 100.4682 39.98848
+	rotation = 0 0 -0.2084088 -0.9780418
+	name = StaticMesh_Shrub_016_53
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 173
+	classPrompt = StaticMesh
+	position = 83.97403 99.71048 39.59438
+	rotation = 0 0 -0.5478985 0.8365448
+	name = StaticMesh_Shrub_016_54
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 174
+	classPrompt = StaticMesh
+	position = 86.69 101.4973 40.28793
+	rotation = 0 0 -0.8316875 0.555244
+	name = StaticMesh_Shrub_016_55
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 175
+	classPrompt = StaticMesh
+	position = 115.8763 -21.90051 47.12099
+	rotation = 0 0 -0.2228914 0.9748433
+	name = StaticMesh_Shrub_016_64
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 176
+	classPrompt = StaticMesh
+	position = 117.9975 -23.16003 50.37529
+	rotation = 0 0 -0.448561 -0.8937522
+	name = StaticMesh_Shrub_016_65
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_016.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 177
+	classPrompt = StaticMesh
+	position = 83.02136 77.09705 38.82787
+	rotation = 0 0 -0.7166529 0.69743
+	name = StaticMesh_Shrub_017_248
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 178
+	classPrompt = StaticMesh
+	position = 84.18106 77.46194 39.80791
+	rotation = 0 0 -0.3759514 0.9266394
+	name = StaticMesh_Shrub_017_249
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 179
+	classPrompt = StaticMesh
+	position = 87.73328 75.86196 46.20256
+	rotation = 0 0 -0.4250758 -0.9051578
+	name = StaticMesh_Shrub_017_250
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 180
+	classPrompt = StaticMesh
+	position = 87.255 76.24585 46.86547
+	rotation = 0 0 -0.8775859 -0.4794194
+	name = StaticMesh_Shrub_017_251
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 181
+	classPrompt = StaticMesh
+	position = 87.12075 81.19028 42.00486
+	rotation = 0 0 -0.1064736 -0.9943155
+	name = StaticMesh_Shrub_017_252
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 182
+	classPrompt = StaticMesh
+	position = 86.65331 82.61964 38.91837
+	rotation = 0 0 -0.6004024 0.7996981
+	name = StaticMesh_Shrub_017_253
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 183
+	classPrompt = StaticMesh
+	position = 120.2739 100.6137 44.25565
+	rotation = 0 0 -0.9737424 0.2276525
+	name = StaticMesh_Shrub_017_254
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 184
+	classPrompt = StaticMesh
+	position = 122.7133 100.101 44.6691
+	rotation = 0 0 -0.1896785 -0.9818463
+	name = StaticMesh_Shrub_017_255
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 185
+	classPrompt = StaticMesh
+	position = 124.8121 99.46007 47.93473
+	rotation = 0 0 -0.687498 -0.7261863
+	name = StaticMesh_Shrub_017_256
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 186
+	classPrompt = StaticMesh
+	position = 124.8699 99.07564 51.28388
+	rotation = 0 0 -0.00383129 -0.9999927
+	name = StaticMesh_Shrub_017_257
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 187
+	classPrompt = StaticMesh
+	position = 126.0116 103.496 47.4715
+	rotation = 0 0 -0.960482 -0.2783421
+	name = StaticMesh_Shrub_017_258
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 188
+	classPrompt = StaticMesh
+	position = 129.7171 104.0874 46.31465
+	rotation = 0 0 -0.9805511 -0.1962638
+	name = StaticMesh_Shrub_017_259
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 189
+	classPrompt = StaticMesh
+	position = 113.886 97.67645 45.00308
+	rotation = 0 0 -0.2015911 -0.9794698
+	name = StaticMesh_Shrub_017_260
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 190
+	classPrompt = StaticMesh
+	position = 114.8102 96.02902 46.49312
+	rotation = 0 0 -0.9869007 0.1613291
+	name = StaticMesh_Shrub_017_261
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 191
+	classPrompt = StaticMesh
+	position = 117.3107 95.50839 48.72482
+	rotation = 0 0 -0.5649078 0.825154
+	name = StaticMesh_Shrub_017_262
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 192
+	classPrompt = StaticMesh
+	position = 118.9078 94.49207 50.63779
+	rotation = 0 0 -0.09069318 0.9958789
+	name = StaticMesh_Shrub_017_263
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 193
+	classPrompt = StaticMesh
+	position = 122.03 93.85736 52.37625
+	rotation = 0 0 -0.8263416 -0.5631692
+	name = StaticMesh_Shrub_017_264
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 194
+	classPrompt = StaticMesh
+	position = 123.7715 91.60907 54.13639
+	rotation = 0 0 -0.1386424 -0.9903425
+	name = StaticMesh_Shrub_017_265
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 195
+	classPrompt = StaticMesh
+	position = 119.6989 92.18344 53.26825
+	rotation = 0 0 -0.6367749 -0.7710498
+	name = StaticMesh_Shrub_017_266
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 196
+	classPrompt = StaticMesh
+	position = 116.2927 91.73181 53.04737
+	rotation = 0 0 -0.9815563 -0.1911734
+	name = StaticMesh_Shrub_017_267
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 197
+	classPrompt = StaticMesh
+	position = 112.714 90.89499 52.98201
+	rotation = 0 0 -0.9972124 -0.0746162
+	name = StaticMesh_Shrub_017_268
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 198
+	classPrompt = StaticMesh
+	position = 110.7957 89.11893 53.68613
+	rotation = 0 0 -0.7355143 -0.6775092
+	name = StaticMesh_Shrub_017_269
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 199
+	classPrompt = StaticMesh
+	position = 109.1617 88.05325 53.96187
+	rotation = 0 0 -0.8769221 0.4806326
+	name = StaticMesh_Shrub_017_270
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 200
+	classPrompt = StaticMesh
+	position = 127.3269 81.7243 56.59505
+	rotation = 0 0 -0.9294459 0.3689586
+	name = StaticMesh_Shrub_017_271
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 201
+	classPrompt = StaticMesh
+	position = 127.4693 84.3656 56.59505
+	rotation = 0 0 -0.1519132 -0.9883938
+	name = StaticMesh_Shrub_017_272
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 202
+	classPrompt = StaticMesh
+	position = 124.7751 83.68121 56.60538
+	rotation = 0 0 -0.3005776 -0.9537573
+	name = StaticMesh_Shrub_017_273
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 203
+	classPrompt = StaticMesh
+	position = 116.2785 83.06351 56.75275
+	rotation = 0 0 -0.8439752 0.5363823
+	name = StaticMesh_Shrub_017_274
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 204
+	classPrompt = StaticMesh
+	position = 112.3335 83.01099 56.64415
+	rotation = 0 0 -0.07376172 0.9972759
+	name = StaticMesh_Shrub_017_275
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 205
+	classPrompt = StaticMesh
+	position = 112.2575 81.29495 57.29595
+	rotation = 0 0 -0.940807 -0.3389426
+	name = StaticMesh_Shrub_017_276
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 206
+	classPrompt = StaticMesh
+	position = 111.3494 83.21242 56.27161
+	rotation = 0 0 -0.9849436 -0.1728762
+	name = StaticMesh_Shrub_017_277
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 207
+	classPrompt = StaticMesh
+	position = 113.9272 72.23936 58.01254
+	rotation = 0 0 -0.918366 0.395732
+	name = StaticMesh_Shrub_017_278
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 208
+	classPrompt = StaticMesh
+	position = 104.6182 77.41193 57.49549
+	rotation = 0 0 -0.9293069 -0.3693083
+	name = StaticMesh_Shrub_017_279
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 209
+	classPrompt = StaticMesh
+	position = 103.2604 74.67056 58.03017
+	rotation = 0 0 -0.4838686 0.8751407
+	name = StaticMesh_Shrub_017_280
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 210
+	classPrompt = StaticMesh
+	position = 112.6716 58.19449 58.1515
+	rotation = 0 0 -0.8884293 -0.4590135
+	name = StaticMesh_Shrub_017_281
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 211
+	classPrompt = StaticMesh
+	position = 103.3722 49.9975 57.0042
+	rotation = 0 0 -0.7106957 0.7034996
+	name = StaticMesh_Shrub_017_282
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 212
+	classPrompt = StaticMesh
+	position = 102.1885 52.8782 57.57191
+	rotation = 0 0 -0.2062138 -0.978507
+	name = StaticMesh_Shrub_017_283
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 213
+	classPrompt = StaticMesh
+	position = 100.5255 54.72165 57.55534
+	rotation = 0 0 -0.007914373 -0.9999687
+	name = StaticMesh_Shrub_017_284
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 214
+	classPrompt = StaticMesh
+	position = 82.36255 25.74097 34.508
+	rotation = 0 0 -0.681033 0.7322527
+	name = StaticMesh_Shrub_017_285
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 215
+	classPrompt = StaticMesh
+	position = 90.40817 25.12012 35.18221
+	rotation = 0 0 -0.7903956 0.6125968
+	name = StaticMesh_Shrub_017_286
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 216
+	classPrompt = StaticMesh
+	position = 101.3964 36.01797 43.14404
+	rotation = 0 0 -0.7592073 -0.6508489
+	name = StaticMesh_Shrub_017_287
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 217
+	classPrompt = StaticMesh
+	position = 105.9848 35.285 45.2933
+	rotation = 0 0 -0.929127 0.3697606
+	name = StaticMesh_Shrub_017_288
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 218
+	classPrompt = StaticMesh
+	position = 106.9061 34.73038 44.95763
+	rotation = 0 0 -0.9972513 -0.07409397
+	name = StaticMesh_Shrub_017_289
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 219
+	classPrompt = StaticMesh
+	position = 103.8238 35.12933 43.54121
+	rotation = 0 0 -0.8422875 0.5390285
+	name = StaticMesh_Shrub_017_290
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 220
+	classPrompt = StaticMesh
+	position = 141.1028 28.11574 50.88531
+	rotation = 0.7705357 0.637394 -0.001469189 -0.001215326
+	name = StaticMesh_Shrub_017_291
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 221
+	classPrompt = StaticMesh
+	position = 142.8159 20.18414 51.98732
+	rotation = 0 0 -0.1565983 -0.9876624
+	name = StaticMesh_Shrub_017_292
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 222
+	classPrompt = StaticMesh
+	position = 140.014 18.68294 51.71413
+	rotation = 0 0 -0.5748466 -0.8182612
+	name = StaticMesh_Shrub_017_293
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 223
+	classPrompt = StaticMesh
+	position = 138.5479 18.2135 51.29903
+	rotation = 0 0 -0.01987937 -0.9998024
+	name = StaticMesh_Shrub_017_294
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 224
+	classPrompt = StaticMesh
+	position = 130.8534 32.88013 49.49821
+	rotation = 0 0 -0.7045582 0.7096462
+	name = StaticMesh_Shrub_017_295
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 225
+	classPrompt = StaticMesh
+	position = 132.9624 35.86084 50.53954
+	rotation = 0 0 -0.1640024 -0.9864599
+	name = StaticMesh_Shrub_017_296
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 226
+	classPrompt = StaticMesh
+	position = 134.2303 41.87204 51.66815
+	rotation = 0 0 -0.7373863 -0.6754712
+	name = StaticMesh_Shrub_017_297
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 227
+	classPrompt = StaticMesh
+	position = 127.3204 33.00171 49.15355
+	rotation = 0 0 -0.6454509 0.7638018
+	name = StaticMesh_Shrub_017_298
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 228
+	classPrompt = StaticMesh
+	position = 154.4492 30.20319 51.62137
+	rotation = 0 0 -0.8432262 0.537559
+	name = StaticMesh_Shrub_017_299
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 229
+	classPrompt = StaticMesh
+	position = 152.7645 32.73426 51.54414
+	rotation = 0 0 -0.6850572 0.7284893
+	name = StaticMesh_Shrub_017_300
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 230
+	classPrompt = StaticMesh
+	position = 153.3314 33.60489 52.51292
+	rotation = 0 0 -0.9812514 -0.1927323
+	name = StaticMesh_Shrub_017_301
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 231
+	classPrompt = StaticMesh
+	position = 154.7616 18.1795 54.0546
+	rotation = 0 0 -0.2614864 -0.9652072
+	name = StaticMesh_Shrub_017_302
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 232
+	classPrompt = StaticMesh
+	position = 156.0184 11.40216 56.06997
+	rotation = 0 0 -0.1436427 0.9896296
+	name = StaticMesh_Shrub_017_303
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 233
+	classPrompt = StaticMesh
+	position = 153.6417 10.61389 56.91073
+	rotation = 0 0 -0.8439261 -0.5364594
+	name = StaticMesh_Shrub_017_304
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 234
+	classPrompt = StaticMesh
+	position = 160.6945 37.63244 51.26722
+	name = StaticMesh_Shrub_017_305
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 235
+	classPrompt = StaticMesh
+	position = 187.2137 29.76766 52.28759
+	rotation = -0.2473693 0.8747063 -0.1134156 0.4010413
+	name = StaticMesh_Shrub_017_306
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 236
+	classPrompt = StaticMesh
+	position = 174.6677 16.05969 53.48457
+	rotation = 0 0 -0.6327514 0.774355
+	name = StaticMesh_Shrub_017_307
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 237
+	classPrompt = StaticMesh
+	position = 173.9042 13.37701 54.40682
+	rotation = 0 0 -0.8496023 -0.5274239
+	name = StaticMesh_Shrub_017_308
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 238
+	classPrompt = StaticMesh
+	position = 181.8826 19.22 53.5966
+	rotation = 0 0 -0.2107784 0.9775339
+	name = StaticMesh_Shrub_017_309
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 239
+	classPrompt = StaticMesh
+	position = 201.8856 37.61322 50.7999
+	rotation = 0 0 -0.7414704 -0.6709856
+	name = StaticMesh_Shrub_017_310
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 240
+	classPrompt = StaticMesh
+	position = 186.6258 30.2574 51.86292
+	rotation = 0 0 -0.6877597 -0.7259384
+	name = StaticMesh_Shrub_017_311
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 241
+	classPrompt = StaticMesh
+	position = 178.4014 42.54159 51.77985
+	rotation = 0 0 -0.0826544 -0.9965783
+	name = StaticMesh_Shrub_017_312
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 242
+	classPrompt = StaticMesh
+	position = 160.453 39.63974 50.99494
+	rotation = 0 0 -0.1531727 0.9881994
+	name = StaticMesh_Shrub_017_313
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 243
+	classPrompt = StaticMesh
+	position = 162.3488 69.04941 51.51838
+	rotation = 0 0 -0.1212677 0.9926198
+	name = StaticMesh_Shrub_017_314
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 244
+	classPrompt = StaticMesh
+	position = 163.0788 71.50597 51.64308
+	rotation = 0 0 -0.09164228 -0.995792
+	name = StaticMesh_Shrub_017_315
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 245
+	classPrompt = StaticMesh
+	position = 162.9469 69.08743 53.04151
+	rotation = 0 0 -0.3297279 0.944076
+	name = StaticMesh_Shrub_017_316
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 246
+	classPrompt = StaticMesh
+	position = 184.6663 69.5423 51.49683
+	rotation = 0 0 -0.8872718 -0.461247
+	name = StaticMesh_Shrub_017_317
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 247
+	classPrompt = StaticMesh
+	position = 179.7351 68.08191 51.28918
+	rotation = 0 0 -0.9830215 -0.1834903
+	name = StaticMesh_Shrub_017_318
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 248
+	classPrompt = StaticMesh
+	position = 179.9384 66.69584 51.76605
+	rotation = 0 0 -0.9561313 -0.2929386
+	name = StaticMesh_Shrub_017_319
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 249
+	classPrompt = StaticMesh
+	position = 179.3044 68.1152 50.8407
+	rotation = 0 0 -0.2610921 -0.9653139
+	name = StaticMesh_Shrub_017_320
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 250
+	classPrompt = StaticMesh
+	position = 194.1252 72.81749 52.35246
+	rotation = 0 0 -0.4905242 0.8714276
+	name = StaticMesh_Shrub_017_321
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 251
+	classPrompt = StaticMesh
+	position = 184.8174 75.4444 51.82569
+	rotation = 0 0 -0.5084 0.8611211
+	name = StaticMesh_Shrub_017_322
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 252
+	classPrompt = StaticMesh
+	position = 227.7857 57.68991 52.52341
+	rotation = 0 0 -0.618725 -0.7856076
+	name = StaticMesh_Shrub_017_323
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 253
+	classPrompt = StaticMesh
+	position = 186.5833 89.06444 52.20718
+	rotation = 0 0 -0.8447965 -0.5350878
+	name = StaticMesh_Shrub_017_324
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 254
+	classPrompt = StaticMesh
+	position = 184.8947 89.71324 52.1437
+	rotation = 0 0 -0.3644812 -0.9312108
+	name = StaticMesh_Shrub_017_325
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 255
+	classPrompt = StaticMesh
+	position = 169.5007 78.89267 50.53239
+	rotation = 0 0 -0.7770761 0.6294067
+	name = StaticMesh_Shrub_017_326
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 256
+	classPrompt = StaticMesh
+	position = 171.9785 82.14755 50.49739
+	rotation = 0 0 -0.630769 0.7759706
+	name = StaticMesh_Shrub_017_327
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 257
+	classPrompt = StaticMesh
+	position = 178.3736 86.41998 51.09022
+	rotation = 0 0 -0.3478 0.9375687
+	name = StaticMesh_Shrub_017_328
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 258
+	classPrompt = StaticMesh
+	position = 210.8393 108.0094 51.89653
+	rotation = 0 0 -0.5326489 0.8463364
+	name = StaticMesh_Shrub_017_329
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 259
+	classPrompt = StaticMesh
+	position = 210.5914 105.1481 51.77432
+	rotation = 0 0 -0.2835382 -0.958961
+	name = StaticMesh_Shrub_017_330
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 260
+	classPrompt = StaticMesh
+	position = 205.9685 108.5896 49.86816
+	rotation = 0 0 -0.9464144 0.322955
+	name = StaticMesh_Shrub_017_331
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 261
+	classPrompt = StaticMesh
+	position = 176.7586 93.04916 50.15841
+	rotation = 0 0 -0.7591916 -0.6508672
+	name = StaticMesh_Shrub_017_332
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 262
+	classPrompt = StaticMesh
+	position = 175.8851 94.16946 49.83237
+	rotation = 0 0 -0.4404109 -0.8977963
+	name = StaticMesh_Shrub_017_333
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 263
+	classPrompt = StaticMesh
+	position = 176.7399 99.29034 49.14532
+	rotation = 0 0 -0.3895372 0.9210107
+	name = StaticMesh_Shrub_017_334
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 264
+	classPrompt = StaticMesh
+	position = 162.4348 83.1123 51.05251
+	rotation = 0 0 -0.9399074 -0.3414294
+	name = StaticMesh_Shrub_017_335
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 265
+	classPrompt = StaticMesh
+	position = 160.2581 79.05402 51.06049
+	rotation = 0 0 -0.9977528 0.06700209
+	name = StaticMesh_Shrub_017_336
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 266
+	classPrompt = StaticMesh
+	position = 160.2474 76.30585 50.88112
+	rotation = 0 0 -0.3228785 -0.9464404
+	name = StaticMesh_Shrub_017_337
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 267
+	classPrompt = StaticMesh
+	position = 159.3942 74.81516 50.83747
+	rotation = 0 0 -0.9073882 0.4202937
+	name = StaticMesh_Shrub_017_338
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 268
+	classPrompt = StaticMesh
+	position = 153.1135 102.1491 49.46622
+	rotation = 0 0 -0.8530187 0.5218804
+	name = StaticMesh_Shrub_017_339
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 269
+	classPrompt = StaticMesh
+	position = 150.533 104.06 48.0694
+	rotation = 0 0 -0.04139662 -0.9991428
+	name = StaticMesh_Shrub_017_340
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 270
+	classPrompt = StaticMesh
+	position = 147.6747 107.677 47.01057
+	rotation = 0 0 -0.7686872 0.6396249
+	name = StaticMesh_Shrub_017_341
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 271
+	classPrompt = StaticMesh
+	position = 145.5835 109.243 46.99316
+	rotation = 0 0 -0.5921569 -0.8058226
+	name = StaticMesh_Shrub_017_342
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 272
+	classPrompt = StaticMesh
+	position = 142.8584 110.7844 46.81145
+	rotation = 0 0 -0.9340473 0.3571492
+	name = StaticMesh_Shrub_017_343
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 273
+	classPrompt = StaticMesh
+	position = 136.0387 101.2937 47.57194
+	rotation = 0 0 -0.9243245 -0.3816076
+	name = StaticMesh_Shrub_017_344
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 274
+	classPrompt = StaticMesh
+	position = 136.371 98.37704 49.02485
+	rotation = 0 0 -0.8854219 0.4647881
+	name = StaticMesh_Shrub_017_345
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 275
+	classPrompt = StaticMesh
+	position = 134.9673 96.97968 49.74123
+	rotation = 0 0 -0.5371967 -0.843457
+	name = StaticMesh_Shrub_017_346
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 276
+	classPrompt = StaticMesh
+	position = 133.2087 94.80765 49.97763
+	rotation = 0 0 -0.9857298 0.1683353
+	name = StaticMesh_Shrub_017_347
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 277
+	classPrompt = StaticMesh
+	position = 131.2994 95.99831 52.9642
+	rotation = 0 0 -0.9876914 0.1564152
+	name = StaticMesh_Shrub_017_348
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 278
+	classPrompt = StaticMesh
+	position = 129.9156 97.08773 54.58857
+	rotation = 0 0 -0.2052457 -0.9787105
+	name = StaticMesh_Shrub_017_349
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 279
+	classPrompt = StaticMesh
+	position = 130.3323 97.84434 53.80614
+	rotation = 0 0 -0.394983 0.9186884
+	name = StaticMesh_Shrub_017_350
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 280
+	classPrompt = StaticMesh
+	position = 136.8145 113.7372 46.24227
+	rotation = 0 0 -0.61011 -0.7923167
+	name = StaticMesh_Shrub_017_351
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 281
+	classPrompt = StaticMesh
+	position = 149.3011 113.4766 49.38124
+	rotation = 0 0 -0.1425481 -0.9897879
+	name = StaticMesh_Shrub_017_352
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 282
+	classPrompt = StaticMesh
+	position = 148.5549 116.236 52.64004
+	rotation = 0 0 -0.9539299 0.3000296
+	name = StaticMesh_Shrub_017_353
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 283
+	classPrompt = StaticMesh
+	position = 152.1651 117.2854 54.11691
+	rotation = 0 0 -0.9664975 -0.2566759
+	name = StaticMesh_Shrub_017_354
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 284
+	classPrompt = StaticMesh
+	position = 151.5623 119.058 53.41797
+	rotation = 0 0 -0.8437027 -0.5368108
+	name = StaticMesh_Shrub_017_355
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 285
+	classPrompt = StaticMesh
+	position = 151.6504 118.173 54.26387
+	rotation = 0 0 -0.9761075 -0.2172881
+	name = StaticMesh_Shrub_017_356
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 286
+	classPrompt = StaticMesh
+	position = 144.4951 118.1195 51.24571
+	rotation = 0 0 -0.6790028 0.7341356
+	name = StaticMesh_Shrub_017_357
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 287
+	classPrompt = StaticMesh
+	position = 146.8112 112.9475 49.58227
+	rotation = 0 0 -0.6694975 -0.7428143
+	name = StaticMesh_Shrub_017_358
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 288
+	classPrompt = StaticMesh
+	position = 164.5211 117.2974 58.58485
+	rotation = 0 0 -0.8626665 0.5057732
+	name = StaticMesh_Shrub_017_359
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 289
+	classPrompt = StaticMesh
+	position = 158.5028 121.1258 57.36285
+	rotation = 0 0 -0.1092695 -0.9940122
+	name = StaticMesh_Shrub_017_360
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 290
+	classPrompt = StaticMesh
+	position = 159.8447 115.8171 58.58382
+	rotation = 0 0 -0.6920692 0.7218311
+	name = StaticMesh_Shrub_017_361
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 291
+	classPrompt = StaticMesh
+	position = 168.0455 114.3408 54.83202
+	rotation = 0 0 -0.6672244 0.7448568
+	name = StaticMesh_Shrub_017_362
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 292
+	classPrompt = StaticMesh
+	position = 172.0484 115.2171 54.92751
+	rotation = 0 0 -0.4270666 -0.9042202
+	name = StaticMesh_Shrub_017_363
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 293
+	classPrompt = StaticMesh
+	position = 181.0419 116.3418 54.08615
+	rotation = 0 0 -0.7912465 -0.6114973
+	name = StaticMesh_Shrub_017_364
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 294
+	classPrompt = StaticMesh
+	position = 175.2661 113.9389 55.00751
+	rotation = 0 0 -0.6641562 -0.7475939
+	name = StaticMesh_Shrub_017_365
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 295
+	classPrompt = StaticMesh
+	position = 173.2551 111.9844 53.95075
+	rotation = 0 0 -0.7277481 0.6858445
+	name = StaticMesh_Shrub_017_366
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 296
+	classPrompt = StaticMesh
+	position = 186.7068 119.2292 55.44901
+	rotation = 0 0 -0.3400822 0.9403957
+	name = StaticMesh_Shrub_017_367
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 297
+	classPrompt = StaticMesh
+	position = 187.3553 126.3175 58.58485
+	rotation = 0 0 -0.9421735 -0.3351256
+	name = StaticMesh_Shrub_017_368
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 298
+	classPrompt = StaticMesh
+	position = 192.2182 124.1677 58.40286
+	rotation = 0 0 -0.6214932 0.7834195
+	name = StaticMesh_Shrub_017_369
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 299
+	classPrompt = StaticMesh
+	position = 196.7408 121.54 57.02102
+	rotation = 0 0 -0.3587627 0.9334288
+	name = StaticMesh_Shrub_017_370
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 300
+	classPrompt = StaticMesh
+	position = 195.8728 116.6801 53.80169
+	rotation = 0 0 -0.7074585 0.7067549
+	name = StaticMesh_Shrub_017_371
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 301
+	classPrompt = StaticMesh
+	position = 198.7601 114.9612 51.03732
+	rotation = 0 0 -0.9992239 0.03939034
+	name = StaticMesh_Shrub_017_372
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 302
+	classPrompt = StaticMesh
+	position = 203.6566 111.8179 49.5647
+	rotation = 0 0 -0.9980096 0.06306188
+	name = StaticMesh_Shrub_017_373
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 303
+	classPrompt = StaticMesh
+	position = 205.4882 112.8818 50.38459
+	rotation = 0 0 -0.7198523 0.6941273
+	name = StaticMesh_Shrub_017_374
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 304
+	classPrompt = StaticMesh
+	position = 198.8304 120.6021 56.11047
+	rotation = 0 0 -0.9700977 0.2427147
+	name = StaticMesh_Shrub_017_375
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 305
+	classPrompt = StaticMesh
+	position = 224.8004 46.58636 53.08826
+	rotation = 0 0 -0.6094216 -0.7928464
+	name = StaticMesh_Shrub_017_376
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 306
+	classPrompt = StaticMesh
+	position = 225.2771 49.755 52.70145
+	rotation = 0 0 -0.9304733 0.3663598
+	name = StaticMesh_Shrub_017_377
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 307
+	classPrompt = StaticMesh
+	position = 225.5007 50.39503 53.67791
+	rotation = 0 0 -0.4384636 0.8987489
+	name = StaticMesh_Shrub_017_378
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 308
+	classPrompt = StaticMesh
+	position = 224.9807 48.95648 54.64112
+	rotation = 0 0 -0.9076718 -0.4196807
+	name = StaticMesh_Shrub_017_379
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 309
+	classPrompt = StaticMesh
+	position = 223.3006 47.82227 52.88216
+	rotation = 0 0 -0.7731517 -0.6342211
+	name = StaticMesh_Shrub_017_380
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 310
+	classPrompt = StaticMesh
+	position = 223.6678 48.50146 53.21329
+	rotation = 0 0 -0.983984 0.178257
+	name = StaticMesh_Shrub_017_381
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 311
+	classPrompt = StaticMesh
+	position = 219.727 34.10291 56.71715
+	rotation = 0 0 -0.9964252 -0.08448061
+	name = StaticMesh_Shrub_017_382
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 312
+	classPrompt = StaticMesh
+	position = 219.9131 38.54253 55.95189
+	rotation = 0 0 -0.8494209 -0.5277159
+	name = StaticMesh_Shrub_017_383
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 313
+	classPrompt = StaticMesh
+	position = 223.8071 38.71549 54.89524
+	rotation = 0 0 -0.1035718 0.994622
+	name = StaticMesh_Shrub_017_384
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 314
+	classPrompt = StaticMesh
+	position = 226.1095 40.02116 56.18199
+	rotation = 0 0 -0.9494864 0.3138081
+	name = StaticMesh_Shrub_017_385
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 315
+	classPrompt = StaticMesh
+	position = 89.48096 60.6893 53.16612
+	rotation = 0 0 -0.6771075 0.7358841
+	name = StaticMesh_Shrub_017_418
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 316
+	classPrompt = StaticMesh
+	position = 92.59656 56.76413 54.2888
+	rotation = 0 0 -0.350324 -0.9366286
+	name = StaticMesh_Shrub_017_419
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_017.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart
+	uin = 317
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 134.7655 25.13327 50.34185
+	rotation = -0.05402337 -0.07550724 0.579364 0.8097638
+	name = FarmCart_031_0
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 318
+	classPrompt = StaticMesh
+	position = 65.2782 -14.81404 30.54598
+	rotation = 0 0 -0.9990482 0.04361945
+	name = StaticMesh_River_0
+	editorLayer = "Root Layer\\Water"
+	meshName = "Maps\\VillageDemo\\River\\River.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 319
+	classPrompt = StaticMesh
+	position = 57.7979 -74.27983 82.44763
+	rotation = 0 0 -0.9932612 -0.1158981
+	scale = 0.4734848 0.4734848 0.4781042
+	name = StaticMesh_Waterfalls_2_0
+	editorLayer = "Root Layer\\Water"
+	meshName = "Maps\\VillageDemo\\River\\Waterfalls_2.mesh"
+	collision = False
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashBig
+	uin = 320
+	classPrompt = MapObject
+	position = 45.67629 90.98137 3.309696
+	rotation = 0 0 -0.7210855 0.6928461
+	name = SplashBig_37
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashBig
+	uin = 321
+	classPrompt = MapObject
+	position = 48.12115 91.76786 -3.126919
+	rotation = 0 0 -0.9247875 -0.380484
+	name = SplashBig_38
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 322
+	classPrompt = SkyBox
+	enabled = True
+	color = 0.8235295 1 1
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 323
+	classPrompt = StaticMesh
+	position = 46.36105 87.59952 27.22044
+	rotation = -0.3005191 0.1863007 0.3507783 0.8671417
+	scale = 0.427287 0.427287 0.427287
+	name = StaticMesh_rock_001_49
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 324
+	classPrompt = StaticMesh
+	position = 53.90989 87.14787 26.13078
+	rotation = -0.4386201 0.2340843 0.8670656 -0.03184665
+	scale = 0.5 0.5 0.5
+	name = StaticMesh_rock_001_50
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 325
+	classPrompt = StaticMesh
+	position = 45.07455 85.63042 26.62008
+	rotation = 0.2039326 0.2103865 0.6204146 -0.7274851
+	scale = 0.5 0.5 0.5
+	name = StaticMesh_rock_001_51
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 326
+	classPrompt = MapObject
+	position = 53.31173 -71.38088 40.72523
+	name = VillageSplashDown_0
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 327
+	classPrompt = MapObject
+	position = 67.12263 -74.88167 40.72523
+	name = VillageSplashDown_1
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 328
+	classPrompt = MapObject
+	position = 83.00599 -64.12319 40.72523
+	name = VillageSplashDown_2
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 329
+	classPrompt = MapObject
+	position = 58.22396 -77.92873 40.72523
+	name = VillageSplashDown_3
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 330
+	classPrompt = MapObject
+	position = 48.62492 98.13844 1.654004
+	name = VillageSplashDown_4
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash3
+	uin = 331
+	classPrompt = MapObject
+	position = 50.39052 91.06528 0.4625664
+	rotation = 0 0 -0.8141716 -0.5806243
+	name = Splash3_4
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 332
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 102.9353 60.8141 59.39745
+	name = VillageApiaryHive_4
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 333
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 103.2031 57.85465 59.39764
+	name = VillageApiaryHive_5
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart
+	uin = 334
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 130.5288 80.84518 57.34632
+	rotation = 0 0 -0.8195769 0.5729692
+	name = FarmCart_031_3
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 335
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 134.3951 24.3384 51.28597
+	rotation = -0.3075624 0.5876286 0.2587837 0.7022315
+	name = FarmStrawBale_10
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 336
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 134.828 25.79038 51.36231
+	rotation = -0.3075624 0.5876286 0.2587837 0.7022315
+	name = FarmStrawBale_11
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageTable
+	uin = 337
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 105.5004 54.7838 58.36819
+	rotation = 0.01095223 0.03881307 -0.9256541 0.3762157
+	name = FarmTable_6
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart
+	uin = 338
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 115.7249 60.77264 59.11906
+	rotation = 0 0 0.9948216 -0.1016358
+	name = FarmCart_0
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageBarrel
+	uin = 339
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 114.8839 60.38395 59.83795
+	rotation = -0.6853997 -0.1519495 0.1541346 0.6952561
+	name = FarmBarrel_16
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageBarrel
+	uin = 340
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 116.2494 60.63811 59.83795
+	rotation = -0.6853997 -0.1519495 0.1541346 0.6952561
+	name = FarmBarrel_17
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageBarrel
+	uin = 341
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 115.4038 60.97809 59.83795
+	rotation = -0.6853997 -0.1519495 0.1541346 0.6952561
+	name = FarmBarrel_18
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageBarrel
+	uin = 342
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 116.9739 61.24565 59.83795
+	rotation = -0.6853997 -0.1519495 0.1541346 0.6952561
+	name = FarmBarrel_19
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = DecorativeObjectManager
+	uin = 343
+	classPrompt = DecorativeObjectManager
+	subscriptionsToDeletionEvent = 5 152
+	enabled = True
+	visible = True
+	geometries = 5 152
+	itemDataVersion = 2
+	tags
+	{
+	}
+	typeItems
+	{
+		item
+		{
+			type = GrassGreen
+			itemCount = 64684
+		}
+		item
+		{
+			type = FlowerYellow
+			itemCount = 3160
+		}
+		item
+		{
+			type = FlowerWhite
+			itemCount = 2901
+		}
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 344
+	classPrompt = MapObject
+	position = 48.05005 89.65204 29.1227
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = VillageSplash_0
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 345
+	classPrompt = MapObject
+	position = 54.75546 89.72898 29.1227
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = VillageSplash_1
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 346
+	classPrompt = MapObject
+	position = 50.39719 89.64392 29.1227
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = VillageSplash_2
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 347
+	classPrompt = MapObject
+	position = 44.93549 90.88767 27.99616
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = VillageSplash_3
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash
+	uin = 348
+	classPrompt = MapObject
+	position = 56.82932 91.31506 28.06616
+	rotation = 0 0 -0.8919765 -0.4520817
+	scale = 2.1 2.1 2.1
+	name = VillageSplash_4
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = WaterPlaneClipVolume
+	uin = 349
+	classPrompt = WaterPlaneClipVolume
+	position = 116.982 -70.61472 39.11153
+	rotation = 0 0 -0.7079176 -0.7062954
+	scale = 315.2927 690.2221 309.9893
+	editorLayer = "Root Layer\\Ocean"
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCompositorManager
+	uin = 350
+	classPrompt = MapCompositorManager
+	tags
+	{
+	}
+	items
+	{
+		item
+		{
+			name = SSAO
+			Intensity = 1.5
+			Downsampling = 1
+			SampleLength = 2
+			OffsetScale = 0.05
+			DefaultAccessibility = 0.7
+			MaxDistance = 50
+			BlurSpread = 1
+			ShowAO = False
+			Enabled = True
+		}
+		item
+		{
+			name = DepthOfField
+			FocalDistance = 30
+			AutoFocus = True
+			FocalSize = 20
+			BlurSpread = 0.2
+			BlurTextureResolution = 6
+			BackgroundTransitionLength = 150
+			BlurForeground = True
+			ForegroundTransitionLength = 80
+			AutoFocusRange = 1 80
+			AutoFocusTransitionSpeed = 100
+			Enabled = True
+		}
+		item
+		{
+			name = Vignetting
+			Radius = 1.273
+			Intensity = 0.873
+			Enabled = True
+		}
+		item
+		{
+			name = LightScattering
+			Color = 1 0.9137256 0.5686275
+			Intensity = 0.7
+			Decay = 0.9
+			Density = 0.7
+			BlurFactor = 0.2
+			Resolution = 5
+			Enabled = True
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 351
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Lighting\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 3
+	billboardSize = 0.545
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = -0.3 0.8 0.4
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1.392157 1.392157 1.090196
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 9.165314 67.70953 171.4563
+	rotation = -0.4525691 -0.2285167 0.6032143 -0.6157061
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageDoor2
+	uin = 352
+	classPrompt = MapObject
+	position = 112.3859 54.55474 59.29704
+	rotation = 0 0 0.9989798 0.04516131
+	name = VillageDoor2_2
+	editorLayer = "Root Layer\\Buildings"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Fog
+	uin = 353
+	classPrompt = Fog
+	enabled = True
+	mode = Exp2
+	color = 0.7843138 1 1
+	expDensity = 0.0025
+	tags
+	{
+	}
+}
+entity
+{
+	type = LensFlareManager
+	uin = 354
+	classPrompt = LensFlareManager
+	enabled = True
+	color = 1 1 1
+	fadeSpeed = 3
+	visibilityCheckStartDistance = 1
+	flares
+	{
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 0.4980392 0.4980392 0.1
+			size = 0.05 0.05
+			distanceFactor = -0.1
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 0.4980392 1 0.4980392 0.1
+			size = 0.05 0.05
+			distanceFactor = -2
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.08 0.08
+			distanceFactor = -1.5
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.1 0.1
+			distanceFactor = -1.7
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 0.4980392 0.4980392 0.1
+			size = 0.06 0.06
+			distanceFactor = -3
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 0.4980392 0.1
+			size = 0.05 0.05
+			distanceFactor = -0.5
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.09 0.09
+			distanceFactor = -2.1
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.08 0.08
+			distanceFactor = -0.65
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 0.4980392 1 0.4980392 0.1
+			size = 0.05 0.05
+			distanceFactor = -0.86
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.12 0.12
+			distanceFactor = -5
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.04 0.04
+			distanceFactor = 0.3
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 0.4980392 1 0.4980392 0.1
+			size = 0.03 0.03
+			distanceFactor = 0.6
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.06 0.06
+			distanceFactor = 0.1
+			fadeSpeedFactor = 1
+		}
+		item
+		{
+			texture = "Base\\Types\\Lighting\\LensFlareManager\\Textures\\hexangle.png"
+			blending = AlphaAdd
+			color = 1 1 1 0.1
+			size = 0.04 0.04
+			distanceFactor = -0.35
+			fadeSpeedFactor = 1
+		}
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 355
+	classPrompt = StaticMesh
+	position = 53.222 75.13548 -13.31268
+	rotation = -0.001712428 -0.03591157 -0.9982191 0.04759967
+	scale = 4.034647 3.44607 3.479173
+	name = StaticMesh_0
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_002.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 356
+	classPrompt = StaticMesh
+	position = 73.68799 93.06097 -11.25936
+	rotation = -0.0198173 0.05368372 0.8270115 0.5592647
+	scale = 5.233845 5.233845 5.233845
+	name = StaticMesh_1
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 357
+	classPrompt = StaticMesh
+	position = 26.04642 91.77619 -12.74571
+	rotation = 0.05301173 -0.02155052 -0.9705846 0.2338603
+	scale = 5.150983 5.233845 5.233845
+	name = StaticMesh_2
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 358
+	classPrompt = StaticMesh
+	position = 42.0997 82.88127 21.20844
+	rotation = -0.3005191 0.1863007 0.3507783 0.8671417
+	scale = 0.9774616 0.9774616 0.9774616
+	name = StaticMesh_3
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplashDown
+	uin = 359
+	classPrompt = MapObject
+	position = 43.93309 91.53558 6.954613
+	name = VillageSplashDown_5
+	editorLayer = "Root Layer\\Water"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 360
+	classPrompt = MapObject
+	position = 50.99244 104.525 0.4975497
+	rotation = 0 0 -0.6773481 0.7356625
+	scale = 1.719802 1.719802 1
+	name = VillageSplash2_0
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 361
+	classPrompt = MapObject
+	position = 69.39292 117.8688 0.4975497
+	rotation = 0 0 -0.2931661 0.9560614
+	scale = 1.265083 1.265083 1
+	name = VillageSplash2_1
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 362
+	classPrompt = MapObject
+	position = 77.94907 130.6226 0.4975497
+	rotation = 0 0 -0.3904915 0.9206064
+	scale = 1.265083 1.265083 1
+	name = VillageSplash2_2
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 363
+	classPrompt = MapObject
+	position = 29.30844 115.8274 0.4975497
+	rotation = 0 0 -0.9262055 0.3770187
+	scale = 1.265083 1.969587 1
+	name = VillageSplash2_3
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 364
+	classPrompt = MapObject
+	position = 33.68307 153.6674 0.4975497
+	rotation = 0 0 -0.898838 0.4382809
+	scale = 1.261215 1.535586 1
+	name = VillageSplash2_4
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 365
+	classPrompt = MapObject
+	position = 38.74809 144.014 0.4975497
+	rotation = 0 0 -0.9703661 -0.2416394
+	scale = 1.261215 1.535586 1
+	name = VillageSplash2_5
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 366
+	classPrompt = MapObject
+	position = 74.60453 181.1568 0.4975497
+	rotation = 0 0 -0.142635 0.9897753
+	scale = 1.131747 1.778861 1.82
+	name = VillageSplash2_6
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 367
+	classPrompt = MapObject
+	position = 100.4063 137.26 0.4975497
+	rotation = 0 0 -0.6773481 0.7356625
+	scale = 1.255173 2.405967 1
+	name = VillageSplash2_7
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 368
+	classPrompt = MapObject
+	position = 67.77059 63.90949 34.5737
+	rotation = 0 0 0.2933694 -0.9559991
+	editorLayer = "Root Layer\\Trees"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 369
+	classPrompt = MapObject
+	position = -0.4980888 125.5931 0.4975497
+	rotation = 0 0 -0.6470354 0.7624599
+	scale = 1.082461 2.531688 1
+	name = VillageSplash2_8
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 370
+	classPrompt = MapObject
+	position = 82.60599 205.2836 0.4975497
+	rotation = 0 0 -0.142635 0.9897753
+	scale = 1.058765 1.514365 1.82
+	name = VillageSplash2_10
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 371
+	classPrompt = MapObject
+	position = 96.7925 214.3198 0.4975497
+	rotation = 0 0 -0.7080723 0.7061398
+	scale = 1.058765 1.514365 1.82
+	name = VillageSplash2_11
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSplash2
+	uin = 372
+	classPrompt = MapObject
+	position = -5.986288 150.8859 0.4975497
+	rotation = 0 0 -0.898838 0.4382809
+	scale = 1.148835 1.008578 1
+	name = VillageSplash2_12
+	editorLayer = "Root Layer\\Splash"
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 373
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 111.324 71.31187 59.35424
+	name = VillageApiaryHive_9
+	editorLayer = "Root Layer\\DynamicObjects"
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 374
+	classPrompt = StaticMesh
+	position = 49.20935 89.66064 27.1443
+	rotation = -0.121037 0.01257465 -0.9872547 0.1025669
+	name = StaticMesh_6
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_018.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 375
+	classPrompt = StaticMesh
+	position = 46.90935 90.26064 27.5443
+	rotation = 0.1809125 0.2992544 -0.7176813 0.6022049
+	name = StaticMesh_7
+	editorLayer = "Root Layer\\Shrubs"
+	meshName = "Maps\\VillageDemo\\Vegetation\\Shrubs\\Shrub_018.mesh"
+	collision = False
+	castDynamicShadows = True
+	renderingDistance = 70
+	renderingDistanceForShadows = 70
+	tags
+	{
+	}
+}
+entity
+{
+	type = StaticMesh
+	uin = 376
+	classPrompt = StaticMesh
+	position = 50.50989 84.74787 26.83078
+	rotation = 0.07650806 -0.1228246 -0.1203271 -0.9821314
+	scale = 0.8306432 0.8306432 0.121253
+	name = StaticMesh_8
+	editorLayer = "Root Layer\\Rocks"
+	meshName = "Maps\\VillageDemo\\Rock\\rock_001.mesh"
+	castDynamicShadows = True
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCamera
+	uin = 377
+	classPrompt = MapCamera
+	fov = 0
+	position = 208.5296 74.34607 55.36739
+	rotation = 0 0 0.91934 0.3934642
+	name = MapCamera_MainMenu
+	tags
+	{
+	}
+}
+entity
+{
+	type = Teleporter
+	uin = 378
+	classPrompt = Teleporter
+	active = True
+	changeMapName = "Maps\\MainDemo\\Map.map"
+	changeMapSpawnObjectName = Teleporter_Maps
+	healthFactorAtBeginning = 1
+	position = 184.3776 42.82876 51.89742
+	rotation = 0 0 0.7223417 0.6915363
+	name = Teleporter_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 379
+	classPrompt = SpawnPoint
+	defaultPoint = True
+	position = 184.4867 46.04712 51.68166
+	rotation = 0 0 -0.02178267 -0.9997627
+	name = SpawnPoint_0
+	tags
+	{
+	}
+}

@@ -1,0 +1,240 @@
+type = GameMap
+uin = 2
+classPrompt = GameMap
+gameType = RTS
+gameMusic = "Sounds\\Music\\Game.ogg"
+windDirection = 0
+windSpeed = 1
+resetYCoordinateForDynamicBodies = False
+destroyObjectsBelowHeight = -500
+ambientLight = 0.2 0.2 0.2
+editorCameraPosition = -9.951598 8.515965 14.22052
+editorCameraDirection = 5.797349 -0.8271129
+shadowColor = 1 1 1
+shadowPSSMSplitFactors = 0.1 0.4
+logicSystemManager = 3
+staticBatchingRenderingEnabled = False
+staticBatchingPhysicsEnabledInMapEditor = False
+staticBatchingPhysicsEnabledInSimulation = False
+staticBatchingGridCellSize = 30 30 30
+staticBatchingFilterByMaxTriangleCount = 512
+shadowTechnique = ShadowmapMedium
+sceneGraphSettings
+{
+	amountOfObjectsOutsideOctreeBoundsToRebuld = 30
+	octreeBoundsRebuildExpand = 50 50 50
+	minNodeSize = 10 10 10
+	objectCountThresholdToCreateChildNodes = 10
+	maxNodeCount = 300000
+}
+dataForEditor
+{
+}
+tags
+{
+}
+rootEditorLayer
+{
+	name = Root Layer
+}
+entity
+{
+	type = LogicSystemManager
+	uin = 3
+	referencesToCompileDLL = "System.dll\r\nSystem.Drawing.dll\r\n\r\nEngineApp.dll\r\nUISystem.dll\r\nFileSystem.dll\r\nLog.dll\r\nMathEx.dll\r\nRenderer.dll\r\nPhysicsSystem.dll\r\nSoundSystem.dll\r\nEntitySystem.dll\r\nMapSystem.dll\r\nUtils.dll\r\nHeightmapTerrain.dll\r\nDecorativeObjectManager.dll\r\n\r\nProjectCommon.dll\r\nProjectEntities.dll"
+	usingNamespacesToCodeGeneration = "using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nusing Engine;\r\nusing Engine.FileSystem;\r\nusing Engine.MathEx;\r\nusing Engine.Utils;\r\nusing Engine.Renderer;\r\nusing Engine.PhysicsSystem;\r\nusing Engine.SoundSystem;\r\nusing Engine.UISystem;\r\nusing Engine.EntitySystem;\r\nusing Engine.MapSystem;\r\n\r\nusing ProjectCommon;\r\nusing ProjectEntities;"
+	mapClassManager = 4
+	tags
+	{
+	}
+	entity
+	{
+		type = LogicClassManager
+		uin = 4
+		tags
+		{
+		}
+	}
+}
+entity
+{
+	type = HeightmapTerrain
+	uin = 5
+	classPrompt = HeightmapTerrain
+	enabled = True
+	position = 0 0 -5
+	horizontalSize = 1000
+	dataDirectory = HeightmapTerrain
+	masksSize = 2048
+	detailMapsDistance = 50
+	renderQueueGroup = WorldGeometry1
+	collision = True
+	collisionMaterialName = Default
+	collisionHeightfieldThickness = 2
+	castDynamicShadows = False
+	receiveStaticShadows = True
+	simpleRendering = False
+	tileSize = 64
+	visible = True
+	allowVertexTextureFetchOptimization = True
+	useFloat16BitHeightTexture = False
+	heightMultiplier = 1
+	heightmapTerrainManagerIndex = 0 0
+	ambientOcclusion
+	{
+		enabled = False
+		size = 1024
+		rayLength = 1
+		iterationCount = 100
+		blur = True
+		power = 1
+	}
+	lodSettings
+	{
+		enabled = True
+		maxCount = 99
+		lodLevelDistances = 100 + level * 200
+		morphAreaPercent = 0.3
+		showLevels = False
+	}
+	tags
+	{
+	}
+	layers
+	{
+		item
+		{
+			name = dirt
+			baseMap = "Base\\Types\\Terrain\\DefaultLayer1Base.jpg"
+			baseScale = 10
+			detailMap = "Base\\Types\\Terrain\\DefaultLayer1Detail.jpg"
+			detailScale = 2
+		}
+		item
+		{
+			name = sand
+			baseMap = "Base\\Types\\Terrain\\beach_sand.jpg"
+			baseScale = 10
+			detailScale = 2
+		}
+		item
+		{
+			name = grass
+			baseMap = "Base\\Types\\Terrain\\DefaultLayer0Base.jpg"
+			baseScale = 10
+			detailMap = "Base\\Types\\Terrain\\DefaultLayer0Detail.jpg"
+			detailScale = 2
+		}
+	}
+}
+entity
+{
+	type = Sun
+	uin = 6
+	classPrompt = Sun
+	billboardTexture = "Base\\Types\\Sun\\SunDefault.png"
+	billboardColor = 1 1 1
+	billboardPower = 1
+	billboardSize = 1
+	billboardRenderQueueGroup = Main
+	billboardOverridePosition = 0 0 0
+	enabled = True
+	lightType = Directional
+	diffuseColor = 1 1 1
+	diffusePower = 1
+	specularColor = 1 1 1
+	specularPower = 1
+	attenuationNear = 0
+	attenuationFar = 10
+	attenuationPower = 2
+	ffpAttenuationConstant = 1
+	ffpAttenuationLinear = 0
+	ffpAttenuationQuadric = 0
+	spotlightInnerAngle = 30
+	spotlightOuterAngle = 40
+	spotlightFalloff = 1
+	castShadows = True
+	allowStaticLighting = False
+	allowDynamicLighting = True
+	customShaderParameter = 0 0 0 0
+	position = 0 0 7
+	rotation = -0.2743657 -0.2223418 0.6965998 -0.6245288
+	name = Sun_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = SkyBox
+	uin = 7
+	classPrompt = SkyBox
+	enabled = True
+	color = 1 1 1
+	power = 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = MapCompositorManager
+	uin = 8
+	classPrompt = MapCompositorManager
+	tags
+	{
+	}
+	items
+	{
+		item
+		{
+			name = SSAO
+			Intensity = 1.5
+			Downsampling = 1
+			SampleLength = 2
+			OffsetScale = 0.05
+			DefaultAccessibility = 0.7
+			MaxDistance = 50
+			BlurSpread = 1
+			ShowAO = False
+			Enabled = True
+		}
+	}
+}
+entity
+{
+	type = SpawnPoint
+	uin = 9
+	classPrompt = SpawnPoint
+	defaultPoint = False
+	position = 0 0 0
+	name = SpawnPoint_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = WaterPlane
+	uin = 10
+	classPrompt = WaterPlane
+	size = 1000 1000
+	position = 0 0 0
+	segments = 20 20
+	renderQueueGroup = Queue3
+	reflectionLevel = OnlyModels
+	physicsHeight = 0
+	deepColor = 0 0.3 0.5
+	shallowColor = 0 1 1
+	reflectionColor = 1 1 1
+	reflectionTextureSize = HalfOfFrameBuffer
+	visible = True
+	fixedPipelineMap = "Base\\Types\\Water Plane\\WaterFixedPipeline.jpg"
+	fixedPipelineMapTiling = 10
+	fixedPipelineColor = 0 0.3 0.5
+	useHDRTexture = False
+	allowFog = True
+	tags
+	{
+	}
+}

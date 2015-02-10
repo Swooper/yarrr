@@ -1,0 +1,8 @@
+highLevelMaterial DynamicConstructionsDemo_Stone
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\DynamicConstructionsDemo_Stone.dds"
+	}
+}

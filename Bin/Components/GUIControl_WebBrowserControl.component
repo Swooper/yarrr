@@ -1,0 +1,32 @@
+fullName = "Web Browser control"
+componentTypes = "GUIControlClasses"
+platforms = "Windows, MacOSX"
+enableByDefaultPlatforms = "Windows, MacOSX"
+
+path
+{
+	path = "WebBrowserControl.dll"
+	platforms = "Windows, MacOSX"
+	entryPoint = True
+}
+path
+{
+	path = "Xilium.CefGlue.dll"
+	platforms = "Windows, MacOSX"
+}
+path
+{
+	path = "NativeDlls\\Windows_x86\\CefGlue\\*.*"
+	platforms = "Windows"
+}
+path
+{
+	path = "NativeDlls\\Windows_x64\\CefGlue\\*.*"
+	platforms = "Windows"
+}
+
+//path
+//{
+//	path = "Game.app\\Contents\\Frameworks\\Chromium Embedded Framework.framework\\*.*"
+//	platforms = "MacOSX"
+//}

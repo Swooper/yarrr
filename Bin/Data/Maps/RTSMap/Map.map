@@ -8,8 +8,8 @@ windSpeed = 1
 resetYCoordinateForDynamicBodies = False
 destroyObjectsBelowHeight = -500
 ambientLight = 0.2 0.2 0.2
-editorCameraPosition = 84.1255 -105.105 54.31575
-editorCameraDirection = 2.523088 -0.3465087
+editorCameraPosition = 174.5405 -196.8861 49.73567
+editorCameraDirection = 3.037607 -0.6720176
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 logicSystemManager = 3
@@ -259,8 +259,9 @@ entity
 	uin = 11
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
-	position = 10.28543 -16.76745 1.695474
+	position = 4.58543 -12.26745 1.695474
 	name = RTSRobot_3
 	tags
 	{
@@ -272,6 +273,7 @@ entity
 	uin = 12
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
 	position = 1.994458 -4.100735 1.717736
 	name = RTSRobot_0
@@ -285,6 +287,7 @@ entity
 	uin = 13
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
 	position = 12.90398 -3.170218 1.695227
 	name = RTSRobot_1
@@ -298,6 +301,7 @@ entity
 	uin = 14
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
 	position = 11.59292 -10.51263 1.692745
 	name = RTSRobot_2
@@ -311,6 +315,7 @@ entity
 	uin = 15
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
 	position = 5.607256 -0.7064345 1.712549
 	name = RTSRobot_4
@@ -321,7 +326,7 @@ entity
 entity
 {
 	type = GridBasedNavigationSystem
-	uin = 21
+	uin = 16
 	classPrompt = GridBasedNavigationSystem
 	gridBounds = -1000 -1000 1000 1000
 	gridCellSize = 1
@@ -337,12 +342,1208 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 22
+	uin = 17
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
 	healthFactorAtBeginning = 1
-	position = -6.339796 -153.589 18.41521
+	position = -6.339796 -153.589 18.11521
 	name = RTSRobot_5
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSFactionManager
+	uin = 24
+	classPrompt = RTSFactionManager
+	factions
+	{
+		item
+		{
+			factionType = GoodFaction
+			money = 0
+		}
+		item
+		{
+			factionType = BadFaction
+			money = 0
+		}
+	}
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSHeadquaters
+	uin = 25
+	classPrompt = RTSBuilding
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = 1.039568 15.64446 -0.09605742
+	rotation = 0 0 0.2565755 0.9665242
+	name = RTSHeadquaters_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSMine
+	uin = 26
+	classPrompt = RTSMine
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = -13.7 29.2 0.7000002
+	name = RTSMine_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSFactory
+	uin = 27
+	classPrompt = RTSBuilding
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = -16.8 5.1 0.6999999
+	rotation = 0 0 0.9134171 0.4070247
+	name = RTSFactory_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = DestructibleHouse
+	uin = 29
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 8.9 -142.5 16.5
+	rotation = 0 0 -0.4435763 0.8962367
+	name = DestructibleHouse_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = DestructibleHouse
+	uin = 28
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -14.2 -172.5 16.6
+	rotation = 0 0 0.8151534 0.5792452
+	name = DestructibleHouse_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = DestructibleHouse
+	uin = 30
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 25.2 -214.5 17.8
+	rotation = 0 0 -0.9775996 -0.2104734
+	name = DestructibleHouse_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = DestructibleHouse
+	uin = 31
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -4.4 -203.6 16.5
+	rotation = 0 0 0.8940324 0.4480024
+	name = DestructibleHouse_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart
+	uin = 32
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 3.8 -179.3 17.5
+	name = VillageCart_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart2
+	uin = 33
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -4.700001 -182.3 17.3
+	rotation = 0 0 0.453361 0.891327
+	name = VillageCart2_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageCart2
+	uin = 34
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 10.1 -153.6 17.2
+	name = VillageCart2_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageSign
+	uin = 35
+	classPrompt = MapObject
+	position = -11.5 -115.1 17.9
+	name = VillageSign_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 36
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -1.6 -191.2 17.3
+	name = VillageStrawBale_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 37
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -10.2 -187.8 17.3
+	rotation = -0.01138535 -0.00206762 0.1845066 0.9827632
+	name = VillageStrawBale_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 38
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -8.5 -183.9 17.3
+	rotation = 0 0 0.3065329 0.9518601
+	name = VillageStrawBale_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 39
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -2.8 -185.2 17.3
+	rotation = 0.01429292 0.01927677 -0.01162156 0.9996445
+	name = VillageStrawBale_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageStrawBale
+	uin = 40
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -9.3 -192.5 17.3
+	name = VillageStrawBale_4
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageTable
+	uin = 41
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 4.2 -194 17.1
+	name = VillageTable_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageTable2
+	uin = 42
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -2.6 -169 17.1
+	name = VillageTable2_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = ExplosionBarrel
+	uin = 46
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 4.2 -179.4 18.4
+	name = ExplosionBarrel_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = ExplosionBarrel
+	uin = 45
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 14.8 -159.6 18.3
+	name = ExplosionBarrel_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = WindMill
+	uin = 47
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = -26 -160.2 16.2
+	rotation = 0 0 0.4981252 0.8671051
+	name = WindMill_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 49
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 13.9 -210.3 17.8
+	name = VillageApiaryHive_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 50
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 8.400001 -210.3 17.8
+	name = VillageApiaryHive_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 51
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 9.3 -216.7 18.4
+	name = VillageApiaryHive_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = VillageApiaryHive
+	uin = 52
+	classPrompt = Dynamic
+	healthFactorAtBeginning = 1
+	position = 13.9 -216 18
+	name = VillageApiaryHive_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = TigerTank
+	uin = 54
+	classPrompt = Tank
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 209.6 -147.1 20.6
+	rotation = 0 0 -0.9433744 0.3317299
+	name = TigerTank_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 56
+	classPrompt = MapObject
+	position = -20.5 -193.4 16.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 55
+	classPrompt = MapObject
+	position = 11.7 -223.8 17.9
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 57
+	classPrompt = MapObject
+	position = 45.5 -222.1 16.6
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 58
+	classPrompt = MapObject
+	position = 45.6 -242.3 15.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 59
+	classPrompt = MapObject
+	position = 79.3 -234 17.3
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 60
+	classPrompt = MapObject
+	position = 144.6 -313.6 0.9
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 61
+	classPrompt = MapObject
+	position = 171.5 -323.5 1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 62
+	classPrompt = MapObject
+	position = 170.9 -281 5.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 63
+	classPrompt = MapObject
+	position = 157.9 -142.2 15
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 64
+	classPrompt = MapObject
+	position = 98.6 -165.8 20.5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 65
+	classPrompt = MapObject
+	position = 93.1 -181.8 22
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 66
+	classPrompt = MapObject
+	position = 187.2 -273.8 9.8
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 67
+	classPrompt = MapObject
+	position = 151.8 -253.9 7.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 68
+	classPrompt = MapObject
+	position = -30.1 -182.7 17.2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 69
+	classPrompt = MapObject
+	position = -1.4 -218 18.8
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree06A
+	uin = 70
+	classPrompt = MapObject
+	position = -15.1 -212.4 17.8
+	rotation = 0 0 -0.7215207 0.6923929
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 71
+	classPrompt = MapObject
+	position = -24.9 -185.2 16.5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 48
+	classPrompt = MapObject
+	position = 73 -198.6 24
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 44
+	classPrompt = MapObject
+	position = 96.8 -195.6 24.2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 43
+	classPrompt = MapObject
+	position = 147.9 -283.7 2.5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 72
+	classPrompt = MapObject
+	position = 112.9 -307 5.2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 73
+	classPrompt = MapObject
+	position = 122.9 -270.2 1.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 74
+	classPrompt = MapObject
+	position = 164.4 -251.9 13.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 75
+	classPrompt = MapObject
+	position = 191.5 -242.6 19.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 76
+	classPrompt = MapObject
+	position = 24 -120.2 17.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 77
+	classPrompt = MapObject
+	position = -44.2 -45.2 0.3
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 78
+	classPrompt = MapObject
+	position = -12.3 -96.2 13.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 79
+	classPrompt = MapObject
+	position = 19.6 -79.9 11.8
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 80
+	classPrompt = MapObject
+	position = 58.2 -100.9 19.5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 81
+	classPrompt = MapObject
+	position = 76.7 -54.6 0.6999999
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 82
+	classPrompt = MapObject
+	position = 46.2 -89.2 18.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 83
+	classPrompt = MapObject
+	position = 86.7 -84.1 5.4
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree01A
+	uin = 84
+	classPrompt = MapObject
+	position = 59 -1.7 2.2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 85
+	classPrompt = MapObject
+	position = 83.6 -73.9 1.299999
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 86
+	classPrompt = MapObject
+	position = 78.3 -37.2 0.8000002
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 87
+	classPrompt = MapObject
+	position = 36.9 -63.7 14.2
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 88
+	classPrompt = MapObject
+	position = 65.9 -88 19.1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 89
+	classPrompt = MapObject
+	position = 28.7 -91.5 14.3
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree02A
+	uin = 90
+	classPrompt = MapObject
+	position = -14.3 -72.3 5.200001
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 91
+	classPrompt = MapObject
+	position = -40.8 -22.7 0.4000001
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 92
+	classPrompt = MapObject
+	position = -18.2 -51.9 0.3000001
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 93
+	classPrompt = MapObject
+	position = -30.2 -78.5 5
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 94
+	classPrompt = MapObject
+	position = -17.6 -86.1 10.9
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 95
+	classPrompt = MapObject
+	position = 17.4 -55.1 3.8
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 96
+	classPrompt = MapObject
+	position = 51 -80.8 17.9
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 97
+	classPrompt = MapObject
+	position = 59.5 -29.8 0.1999998
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
+	uin = 98
+	classPrompt = MapObject
+	position = 41.2 -47.5 5.1
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree04A
+	uin = 99
+	classPrompt = MapObject
+	position = 30.5 -71.10001 14.7
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree05A
+	uin = 100
+	classPrompt = MapObject
+	position = 54.3 -69.6 13.8
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree05A
+	uin = 101
+	classPrompt = MapObject
+	position = 55.5 -17 0
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree05A
+	uin = 102
+	classPrompt = MapObject
+	position = 61.8 -45.2 0.0999999
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree05A
+	uin = 103
+	classPrompt = MapObject
+	position = 31 -55.5 8.699999
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree08A
+	uin = 104
+	classPrompt = MapObject
+	position = 46.3 -34.2 -0.3
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSFactory
+	uin = 105
+	classPrompt = RTSBuilding
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 181.1 -163.7 19.8
+	name = RTSFactory_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSHeadquaters
+	uin = 106
+	classPrompt = RTSBuilding
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 233.8 -159.3 19.4
+	rotation = 0 0 -0.3934602 0.9193417
+	name = RTSHeadquaters_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSMine
+	uin = 107
+	classPrompt = RTSMine
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 242.3 -190.6 20.3
+	name = RTSMine_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSFactory
+	uin = 108
+	classPrompt = RTSBuilding
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 211.8 -196.2 20.1
+	rotation = 0 0 -0.9454942 0.3256388
+	name = RTSFactory_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSMine
+	uin = 109
+	classPrompt = RTSMine
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 248.4 -179.9 20.2
+	name = RTSMine_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSMine
+	uin = 110
+	classPrompt = RTSMine
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 253.7 -168.5 20.2
+	name = RTSMine_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 111
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 202.5 -167.2 21.1
+	name = RTSRobot_6
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 113
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 204.7 -173.4 21.1
+	name = RTSRobot_7
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 115
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 205.7 -180 21.1
+	name = RTSRobot_8
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 117
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 211.7 -178.6 21.1
+	name = RTSRobot_9
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 119
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 213.2 -173.3 21.1
+	name = RTSRobot_10
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 121
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 210.5 -167.6 21.1
+	name = RTSRobot_11
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 123
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 206.6 -163.2 21.1
+	name = RTSRobot_12
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 125
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 158.4 -196.5 21.1
+	name = RTSRobot_13
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 127
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 158.2 -190 21.1
+	name = RTSRobot_14
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 129
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 150 -191.4 21.9
+	name = RTSRobot_15
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 131
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 96.9 -220.6 21.9
+	name = RTSRobot_16
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 133
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 88.1 -220.6 22.7
+	name = RTSRobot_17
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 135
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 91.3 -211.9 24.3
+	name = RTSRobot_18
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 137
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialAI = DefaultRTSUnitAI
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 4 -85.4 13.4
+	name = RTSRobot_19
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 139
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 3.9 -167.5 18.4
+	name = RTSRobot_20
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 141
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 6.4 -155.4 18.4
+	name = RTSRobot_21
 	tags
 	{
 	}

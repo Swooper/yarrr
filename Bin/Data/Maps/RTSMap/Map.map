@@ -9,8 +9,8 @@ windSpeed = 1
 resetYCoordinateForDynamicBodies = False
 destroyObjectsBelowHeight = -500
 ambientLight = 0.2 0.2 0.2
-editorCameraPosition = -6.870533 -117.9097 27.15302
-editorCameraDirection = 4.878539 -0.3671143
+editorCameraPosition = -30.84461 120.851 16.62587
+editorCameraDirection = 5.161733 0.01209438
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 logicSystemManager = 3
@@ -769,7 +769,6 @@ entity
 		{
 			type = LogicEntityClass
 			uin = 66
-			subscriptionsToDeletionEvent = 254
 			entityClassName = Region
 			className = BeginingCutscene
 			customScriptCodeCreated = False
@@ -3289,39 +3288,8 @@ entity
 }
 entity
 {
-	type = Region
-	uin = 254
-	classPrompt = Region
-	subscriptionsToDeletionEvent = 66
-	enabled = True
-	shapeType = Box
-	filter = OnlyDynamicBodies
-	position = 2.327123 -36.95102 2.050669
-	rotation = 0 0 -0.9569077 -0.2903922
-	scale = 10 10 10
-	name = Region_0
-	logicClass = 66
-	checkType = Bounds
-	tags
-	{
-	}
-}
-entity
-{
-	type = HelperPoint
-	uin = 255
-	classPrompt = MapObject
-	position = 24.66369 40.89436 1.814385
-	rotation = 0 0 -0.809286 0.5874148
-	name = HelperPoint_0
-	tags
-	{
-	}
-}
-entity
-{
 	type = RTSRobot
-	uin = 256
+	uin = 254
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3337,7 +3305,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 257
+	uin = 255
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3353,7 +3321,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 258
+	uin = 256
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3369,7 +3337,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 259
+	uin = 257
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3385,7 +3353,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 260
+	uin = 258
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3401,7 +3369,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 261
+	uin = 259
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3417,7 +3385,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 262
+	uin = 260
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3432,7 +3400,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 263
+	uin = 261
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3447,7 +3415,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 264
+	uin = 262
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3462,7 +3430,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 265
+	uin = 263
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction

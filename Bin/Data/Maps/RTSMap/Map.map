@@ -9,8 +9,8 @@ windSpeed = 1
 resetYCoordinateForDynamicBodies = False
 destroyObjectsBelowHeight = -500
 ambientLight = 0.2 0.2 0.2
-editorCameraPosition = 6.210832 4.364742 21.05986
-editorCameraDirection = 4.824508 -0.4913242
+editorCameraPosition = -6.870533 -117.9097 27.15302
+editorCameraDirection = 4.878539 -0.3671143
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 logicSystemManager = 3
@@ -289,8 +289,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 25
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -299,8 +299,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 26
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -595,8 +595,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 51
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -769,7 +769,7 @@ entity
 		{
 			type = LogicEntityClass
 			uin = 66
-			subscriptionsToDeletionEvent = 256
+			subscriptionsToDeletionEvent = 254
 			entityClassName = Region
 			className = BeginingCutscene
 			customScriptCodeCreated = False
@@ -887,8 +887,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 76
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -1157,8 +1157,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 99
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -1167,8 +1167,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 100
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -1474,8 +1474,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 126
-							subscriptionsToDeletionEvent = 231
-							entity = 231
+							subscriptionsToDeletionEvent = 230
+							entity = 230
 							tags
 							{
 							}
@@ -1749,22 +1749,6 @@ entity
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
-	position = 3.98543 -14.76745 1.695474
-	rotation = 0 0 -0.675563 0.7373023
-	name = RTSRobot_3
-	editorLayer = "Root Layer\\Units"
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 139
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = GoodFaction
-	healthFactorAtBeginning = 1
 	position = -0.305542 -14.30074 1.717736
 	rotation = 0 0 -0.6536418 0.756804
 	name = RTSRobot_0
@@ -1776,7 +1760,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 140
+	uin = 139
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1792,7 +1776,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 141
+	uin = 140
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1808,7 +1792,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 142
+	uin = 141
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1824,7 +1808,7 @@ entity
 entity
 {
 	type = GridBasedNavigationSystem
-	uin = 143
+	uin = 142
 	classPrompt = GridBasedNavigationSystem
 	gridBounds = -1000 -1000 1000 1000
 	gridCellSize = 1
@@ -1840,7 +1824,7 @@ entity
 entity
 {
 	type = RTSFactionManager
-	uin = 144
+	uin = 143
 	classPrompt = RTSFactionManager
 	factions
 	{
@@ -1862,7 +1846,7 @@ entity
 entity
 {
 	type = RTSHeadquaters
-	uin = 145
+	uin = 144
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1878,7 +1862,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 146
+	uin = 145
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1893,13 +1877,13 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 147
+	uin = 146
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
 	healthFactorAtBeginning = 1
-	position = -16.8 5.1 0.6999999
-	rotation = 0 0 0.9134171 0.4070247
+	position = -16.8 5.1 0.5999999
+	rotation = 0 0 -0.2922244 0.9563498
 	name = RTSFactory_0
 	editorLayer = "Root Layer\\Buildings"
 	tags
@@ -1909,11 +1893,11 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 148
+	uin = 147
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
-	position = 8.9 -142.5 16.5
-	rotation = 0 0 -0.4435763 0.8962367
+	position = 7.4 -142.5 16.5
+	rotation = 0 0 -0.5178516 0.8554707
 	name = DestructibleHouse_0
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -1923,7 +1907,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 149
+	uin = 148
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -14.2 -172.5 16.6
@@ -1937,7 +1921,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 150
+	uin = 149
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 25.2 -214.5 17.8
@@ -1951,7 +1935,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 151
+	uin = 150
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -4.4 -203.6 16.5
@@ -1965,10 +1949,10 @@ entity
 entity
 {
 	type = VillageCart
-	uin = 152
+	uin = 151
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
-	position = 3.8 -179.3 17.5
+	position = -4.1 -174.9 17.5
 	name = VillageCart_0
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -1978,7 +1962,7 @@ entity
 entity
 {
 	type = VillageCart2
-	uin = 153
+	uin = 152
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -4.700001 -182.3 17.3
@@ -1992,10 +1976,10 @@ entity
 entity
 {
 	type = VillageCart2
-	uin = 154
+	uin = 153
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
-	position = 10.1 -153.6 17.2
+	position = 14.7 -154.3 17.4
 	name = VillageCart2_1
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -2005,7 +1989,7 @@ entity
 entity
 {
 	type = VillageSign
-	uin = 155
+	uin = 154
 	classPrompt = MapObject
 	position = -11.5 -115.1 17.9
 	name = VillageSign_0
@@ -2017,7 +2001,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 156
+	uin = 155
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -1.6 -191.2 17.3
@@ -2030,7 +2014,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 157
+	uin = 156
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -10.2 -187.8 17.3
@@ -2044,7 +2028,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 158
+	uin = 157
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -8.5 -183.9 17.3
@@ -2058,7 +2042,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 159
+	uin = 158
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -2.8 -185.2 17.3
@@ -2072,7 +2056,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 160
+	uin = 159
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -9.3 -192.5 17.3
@@ -2085,7 +2069,7 @@ entity
 entity
 {
 	type = VillageTable
-	uin = 161
+	uin = 160
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 4.2 -194 17.1
@@ -2098,10 +2082,11 @@ entity
 entity
 {
 	type = VillageTable2
-	uin = 162
+	uin = 161
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
-	position = -2.6 -169 17.1
+	position = -7 -169.8 17.1
+	rotation = 0 0 0.182042 0.9832909
 	name = VillageTable2_0
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -2111,10 +2096,10 @@ entity
 entity
 {
 	type = ExplosionBarrel
-	uin = 163
+	uin = 162
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
-	position = 4.2 -179.4 18.4
+	position = -3.6 -174.7 18.4
 	name = ExplosionBarrel_0
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -2124,7 +2109,7 @@ entity
 entity
 {
 	type = ExplosionBarrel
-	uin = 164
+	uin = 163
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 14.8 -159.6 18.3
@@ -2137,7 +2122,7 @@ entity
 entity
 {
 	type = WindMill
-	uin = 165
+	uin = 164
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -26 -160.2 16.2
@@ -2151,7 +2136,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 166
+	uin = 165
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 13.9 -210.3 17.8
@@ -2164,7 +2149,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 167
+	uin = 166
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 8.400001 -210.3 17.8
@@ -2177,7 +2162,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 168
+	uin = 167
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 9.3 -216.7 18.4
@@ -2190,7 +2175,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 169
+	uin = 168
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 13.9 -216 18
@@ -2203,7 +2188,7 @@ entity
 entity
 {
 	type = TigerTank
-	uin = 170
+	uin = 169
 	classPrompt = Tank
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2219,7 +2204,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 171
+	uin = 170
 	classPrompt = MapObject
 	position = -20.5 -193.4 16.7
 	editorLayer = "Root Layer\\Environment"
@@ -2230,7 +2215,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 172
+	uin = 171
 	classPrompt = MapObject
 	position = 11.7 -223.8 17.9
 	editorLayer = "Root Layer\\Environment"
@@ -2241,7 +2226,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 173
+	uin = 172
 	classPrompt = MapObject
 	position = 45.5 -222.1 16.6
 	editorLayer = "Root Layer\\Environment"
@@ -2252,7 +2237,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 174
+	uin = 173
 	classPrompt = MapObject
 	position = 45.6 -242.3 15.4
 	editorLayer = "Root Layer\\Environment"
@@ -2263,7 +2248,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 175
+	uin = 174
 	classPrompt = MapObject
 	position = 79.3 -234 17.3
 	editorLayer = "Root Layer\\Environment"
@@ -2274,7 +2259,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 176
+	uin = 175
 	classPrompt = MapObject
 	position = 144.6 -313.6 0.9
 	editorLayer = "Root Layer\\Environment"
@@ -2285,7 +2270,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 177
+	uin = 176
 	classPrompt = MapObject
 	position = 171.5 -323.5 1
 	editorLayer = "Root Layer\\Environment"
@@ -2296,7 +2281,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 178
+	uin = 177
 	classPrompt = MapObject
 	position = 170.9 -281 5.7
 	editorLayer = "Root Layer\\Environment"
@@ -2307,7 +2292,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 179
+	uin = 178
 	classPrompt = MapObject
 	position = 157.9 -142.2 15
 	editorLayer = "Root Layer\\Environment"
@@ -2318,7 +2303,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 180
+	uin = 179
 	classPrompt = MapObject
 	position = 98.6 -165.8 20.5
 	editorLayer = "Root Layer\\Environment"
@@ -2329,7 +2314,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 181
+	uin = 180
 	classPrompt = MapObject
 	position = 93.1 -181.8 22
 	editorLayer = "Root Layer\\Environment"
@@ -2340,7 +2325,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 182
+	uin = 181
 	classPrompt = MapObject
 	position = 187.2 -273.8 9.8
 	editorLayer = "Root Layer\\Environment"
@@ -2351,7 +2336,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 183
+	uin = 182
 	classPrompt = MapObject
 	position = 151.8 -253.9 7.7
 	editorLayer = "Root Layer\\Environment"
@@ -2362,7 +2347,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 184
+	uin = 183
 	classPrompt = MapObject
 	position = -30.1 -182.7 17.2
 	editorLayer = "Root Layer\\Environment"
@@ -2373,7 +2358,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 185
+	uin = 184
 	classPrompt = MapObject
 	position = -1.4 -218 18.8
 	editorLayer = "Root Layer\\Environment"
@@ -2384,7 +2369,7 @@ entity
 entity
 {
 	type = Tree06A
-	uin = 186
+	uin = 185
 	classPrompt = MapObject
 	position = -15.1 -212.4 17.8
 	rotation = 0 0 -0.7215207 0.6923929
@@ -2396,7 +2381,7 @@ entity
 entity
 {
 	type = Tree08A
-	uin = 187
+	uin = 186
 	classPrompt = MapObject
 	position = -24.9 -185.2 16.5
 	editorLayer = "Root Layer\\Environment"
@@ -2407,7 +2392,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 188
+	uin = 187
 	classPrompt = MapObject
 	position = 73 -198.6 24
 	editorLayer = "Root Layer\\Environment"
@@ -2418,7 +2403,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 189
+	uin = 188
 	classPrompt = MapObject
 	position = 96.8 -195.6 24.2
 	editorLayer = "Root Layer\\Environment"
@@ -2429,7 +2414,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 190
+	uin = 189
 	classPrompt = MapObject
 	position = 147.9 -283.7 2.5
 	editorLayer = "Root Layer\\Environment"
@@ -2440,7 +2425,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 191
+	uin = 190
 	classPrompt = MapObject
 	position = 112.9 -307 5.2
 	editorLayer = "Root Layer\\Environment"
@@ -2451,7 +2436,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 192
+	uin = 191
 	classPrompt = MapObject
 	position = 122.9 -270.2 1.7
 	editorLayer = "Root Layer\\Environment"
@@ -2462,7 +2447,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 193
+	uin = 192
 	classPrompt = MapObject
 	position = 164.4 -251.9 13.4
 	editorLayer = "Root Layer\\Environment"
@@ -2473,7 +2458,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 194
+	uin = 193
 	classPrompt = MapObject
 	position = 191.5 -242.6 19.4
 	editorLayer = "Root Layer\\Environment"
@@ -2484,7 +2469,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 195
+	uin = 194
 	classPrompt = MapObject
 	position = 24 -120.2 17.7
 	editorLayer = "Root Layer\\Environment"
@@ -2495,7 +2480,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 196
+	uin = 195
 	classPrompt = MapObject
 	position = -44.2 -45.2 0.3
 	editorLayer = "Root Layer\\Environment"
@@ -2506,9 +2491,10 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 197
+	uin = 196
 	classPrompt = MapObject
-	position = -12.3 -96.2 13.4
+	position = -12.3 -96.2 13.1
+	rotation = 0 0 0.7325528 0.6807102
 	editorLayer = "Root Layer\\Environment"
 	tags
 	{
@@ -2517,7 +2503,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 198
+	uin = 197
 	classPrompt = MapObject
 	position = 19.6 -79.9 11.8
 	editorLayer = "Root Layer\\Environment"
@@ -2528,7 +2514,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 199
+	uin = 198
 	classPrompt = MapObject
 	position = 58.2 -100.9 19.5
 	editorLayer = "Root Layer\\Environment"
@@ -2539,7 +2525,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 200
+	uin = 199
 	classPrompt = MapObject
 	position = 76.7 -54.6 0.6999999
 	editorLayer = "Root Layer\\Environment"
@@ -2550,7 +2536,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 201
+	uin = 200
 	classPrompt = MapObject
 	position = 46.2 -89.2 18.4
 	editorLayer = "Root Layer\\Environment"
@@ -2561,7 +2547,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 202
+	uin = 201
 	classPrompt = MapObject
 	position = 86.7 -84.1 5.4
 	editorLayer = "Root Layer\\Environment"
@@ -2572,7 +2558,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 203
+	uin = 202
 	classPrompt = MapObject
 	position = 59 -1.7 2.2
 	editorLayer = "Root Layer\\Environment"
@@ -2583,7 +2569,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 204
+	uin = 203
 	classPrompt = MapObject
 	position = 83.6 -73.9 1.299999
 	editorLayer = "Root Layer\\Environment"
@@ -2594,7 +2580,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 205
+	uin = 204
 	classPrompt = MapObject
 	position = 78.3 -37.2 0.8000002
 	editorLayer = "Root Layer\\Environment"
@@ -2605,7 +2591,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 206
+	uin = 205
 	classPrompt = MapObject
 	position = 36.9 -63.7 14.2
 	editorLayer = "Root Layer\\Environment"
@@ -2616,7 +2602,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 207
+	uin = 206
 	classPrompt = MapObject
 	position = 65.9 -88 19.1
 	editorLayer = "Root Layer\\Environment"
@@ -2627,7 +2613,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 208
+	uin = 207
 	classPrompt = MapObject
 	position = 28.7 -91.5 14.3
 	editorLayer = "Root Layer\\Environment"
@@ -2638,7 +2624,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 209
+	uin = 208
 	classPrompt = MapObject
 	position = -14.3 -72.3 5.200001
 	editorLayer = "Root Layer\\Environment"
@@ -2649,7 +2635,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 210
+	uin = 209
 	classPrompt = MapObject
 	position = -40.8 -22.7 0.4000001
 	editorLayer = "Root Layer\\Environment"
@@ -2660,7 +2646,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 211
+	uin = 210
 	classPrompt = MapObject
 	position = -18.2 -51.9 0.3000001
 	editorLayer = "Root Layer\\Environment"
@@ -2671,7 +2657,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 212
+	uin = 211
 	classPrompt = MapObject
 	position = -30.2 -78.5 5
 	editorLayer = "Root Layer\\Environment"
@@ -2682,9 +2668,20 @@ entity
 entity
 {
 	type = Tree03A
+	uin = 212
+	classPrompt = MapObject
+	position = -17.6 -86.1 10.4
+	editorLayer = "Root Layer\\Environment"
+	tags
+	{
+	}
+}
+entity
+{
+	type = Tree03A
 	uin = 213
 	classPrompt = MapObject
-	position = -17.6 -86.1 10.9
+	position = 17.4 -55.1 3.5
 	editorLayer = "Root Layer\\Environment"
 	tags
 	{
@@ -2695,7 +2692,7 @@ entity
 	type = Tree03A
 	uin = 214
 	classPrompt = MapObject
-	position = 17.4 -55.1 3.8
+	position = 51 -80.8 17.9
 	editorLayer = "Root Layer\\Environment"
 	tags
 	{
@@ -2706,7 +2703,7 @@ entity
 	type = Tree03A
 	uin = 215
 	classPrompt = MapObject
-	position = 51 -80.8 17.9
+	position = 59.5 -29.8 0.1999998
 	editorLayer = "Root Layer\\Environment"
 	tags
 	{
@@ -2717,17 +2714,6 @@ entity
 	type = Tree03A
 	uin = 216
 	classPrompt = MapObject
-	position = 59.5 -29.8 0.1999998
-	editorLayer = "Root Layer\\Environment"
-	tags
-	{
-	}
-}
-entity
-{
-	type = Tree03A
-	uin = 217
-	classPrompt = MapObject
 	position = 41.2 -47.5 5.1
 	editorLayer = "Root Layer\\Environment"
 	tags
@@ -2737,7 +2723,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 218
+	uin = 217
 	classPrompt = MapObject
 	position = 30.5 -71.10001 14.7
 	editorLayer = "Root Layer\\Environment"
@@ -2748,7 +2734,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 219
+	uin = 218
 	classPrompt = MapObject
 	position = 54.3 -69.6 13.8
 	editorLayer = "Root Layer\\Environment"
@@ -2759,7 +2745,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 220
+	uin = 219
 	classPrompt = MapObject
 	position = 55.5 -17 0
 	editorLayer = "Root Layer\\Environment"
@@ -2770,7 +2756,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 221
+	uin = 220
 	classPrompt = MapObject
 	position = 61.8 -45.2 0.0999999
 	editorLayer = "Root Layer\\Environment"
@@ -2781,7 +2767,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 222
+	uin = 221
 	classPrompt = MapObject
 	position = 31 -55.5 8.699999
 	editorLayer = "Root Layer\\Environment"
@@ -2792,7 +2778,7 @@ entity
 entity
 {
 	type = Tree08A
-	uin = 223
+	uin = 222
 	classPrompt = MapObject
 	position = 46.3 -34.2 -0.3
 	editorLayer = "Root Layer\\Environment"
@@ -2803,7 +2789,7 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 224
+	uin = 223
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2818,7 +2804,7 @@ entity
 entity
 {
 	type = RTSHeadquaters
-	uin = 225
+	uin = 224
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2834,7 +2820,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 226
+	uin = 225
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2849,7 +2835,7 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 227
+	uin = 226
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2865,7 +2851,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 228
+	uin = 227
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2880,7 +2866,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 229
+	uin = 228
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -2895,7 +2881,7 @@ entity
 entity
 {
 	type = CutSceneManager
-	uin = 230
+	uin = 229
 	classPrompt = CutSceneManager
 	tags
 	{
@@ -2904,14 +2890,14 @@ entity
 entity
 {
 	type = MapCameraCurve
-	uin = 231
+	uin = 230
 	classPrompt = MapCameraCurve
-	subscriptionsToDeletionEvent = 233 234 235 236 237 238 239 240 241 242 243 25 26 51 76 99 100 126
+	subscriptionsToDeletionEvent = 232 233 234 235 236 237 238 239 240 241 242 25 26 51 76 99 100 126
 	fov = 0
 	curveType = UniformCubicSpline
-	points = 231 234 235 236 233 237 238 239 240 241 242 243
+	points = 230 233 234 235 232 236 237 238 239 240 241 242
 	roundedLineCurveCurvatureRadius = 1
-	owner = 231
+	owner = 230
 	time = 0
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 3.542077 52.34315 19.83427
@@ -2925,7 +2911,7 @@ entity
 entity
 {
 	type = DecorativeObjectManager
-	uin = 232
+	uin = 231
 	classPrompt = DecorativeObjectManager
 	enabled = True
 	visible = True
@@ -2941,11 +2927,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 233
+	uin = 232
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 4
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -7.751287 -135.7649 21.91252
@@ -2958,11 +2944,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 234
+	uin = 233
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 1
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -3.483391 -16.54187 8.623007
@@ -2975,11 +2961,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 235
+	uin = 234
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 2
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -8.130315 -55.08653 13.75655
@@ -2992,11 +2978,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 236
+	uin = 235
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 3
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 0.5104914 -97.06129 21.6669
@@ -3009,11 +2995,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 237
+	uin = 236
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 5
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 6.215713 -184.2827 25.89234
@@ -3026,11 +3012,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 238
+	uin = 237
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 6
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 38.85761 -209.5849 31.30385
@@ -3043,11 +3029,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 239
+	uin = 238
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 7
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 85.60934 -249.7901 36.91574
@@ -3060,11 +3046,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 240
+	uin = 239
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 8
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 142.5023 -250.4006 36.4761
@@ -3077,11 +3063,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 241
+	uin = 240
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 9
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 218.6827 -228.0686 41.55909
@@ -3094,11 +3080,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 242
+	uin = 241
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 10
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 267.7705 -195.8567 46.82981
@@ -3111,11 +3097,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 243
+	uin = 242
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 231
+	subscriptionsToDeletionEvent = 230
 	fov = 0
-	owner = 231
+	owner = 230
 	time = 11
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 266.0423 -165.5749 46.03639
@@ -3128,22 +3114,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 244
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = -4.3 -77.57223 11.05
-	name = RTSZombie_0
-	editorLayer = "Root Layer\\Units"
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSZombie
-	uin = 245
+	uin = 243
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3159,7 +3130,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 246
+	uin = 244
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3175,7 +3146,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 247
+	uin = 245
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3191,7 +3162,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 248
+	uin = 246
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3207,7 +3178,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 249
+	uin = 247
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3223,7 +3194,7 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 250
+	uin = 248
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -3239,14 +3210,46 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 251
+	uin = 249
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
 	healthFactorAtBeginning = 1
 	position = 8.958645 -180.9522 18.47603
-	rotation = 0 0 -0.7116716 -0.7025123
+	rotation = 0 0 -0.9272789 0.3743713
 	name = RTSZombie_7
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 250
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 9.52198 -175.127 18.65819
+	rotation = 0 0 -0.3872514 -0.9219742
+	name = RTSZombie_8
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 251
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 12.58116 -177.3462 19.31842
+	rotation = 0 0 -0.7911758 -0.6115888
+	name = RTSZombie_9
 	editorLayer = "Root Layer\\Units"
 	tags
 	{
@@ -3260,40 +3263,8 @@ entity
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
 	healthFactorAtBeginning = 1
-	position = 9.52198 -175.127 18.65819
-	rotation = 0 0 -0.9552981 -0.2956441
-	name = RTSZombie_8
-	editorLayer = "Root Layer\\Units"
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSZombie
-	uin = 253
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 12.58116 -177.3462 19.31842
-	rotation = 0 0 -0.9443289 0.329003
-	name = RTSZombie_9
-	editorLayer = "Root Layer\\Units"
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSZombie
-	uin = 254
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = GoodFaction
-	healthFactorAtBeginning = 1
 	position = -4.443679 -126.8279 18.3628
-	rotation = 0 0 -0.2908731 0.9567617
+	rotation = 0 0 0.7145196 0.6996155
 	name = RTSZombie_10
 	editorLayer = "Root Layer\\Units"
 	tags
@@ -3303,7 +3274,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 255
+	uin = 253
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3319,7 +3290,7 @@ entity
 entity
 {
 	type = Region
-	uin = 256
+	uin = 254
 	classPrompt = Region
 	subscriptionsToDeletionEvent = 66
 	enabled = True
@@ -3338,7 +3309,7 @@ entity
 entity
 {
 	type = HelperPoint
-	uin = 257
+	uin = 255
 	classPrompt = MapObject
 	position = 24.66369 40.89436 1.814385
 	rotation = 0 0 -0.809286 0.5874148
@@ -3350,7 +3321,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 277
+	uin = 256
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3366,23 +3337,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 279
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = GoodFaction
-	healthFactorAtBeginning = 1
-	position = 4 -19.6 1.7
-	rotation = 0 0 -0.6484663 0.7612433
-	name = RTSRobot_8
-	editorLayer = "Root Layer\\Units"
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 281
+	uin = 257
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3398,7 +3353,7 @@ entity
 entity
 {
 	type = RTSRobot
-	uin = 283
+	uin = 258
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3414,7 +3369,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 275
+	uin = 259
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3430,7 +3385,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 285
+	uin = 260
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3446,7 +3401,7 @@ entity
 entity
 {
 	type = RTSConstructor
-	uin = 288
+	uin = 261
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -3454,6 +3409,66 @@ entity
 	position = -0.3 -8.400001 1.7
 	rotation = 0 0 -0.7230614 0.6907837
 	name = RTSConstructor_2
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 262
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 199.3 -185.5 21.1
+	name = RTSZombie_11
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 263
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 192 -185 21.1
+	name = RTSZombie_12
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 264
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 208.5 -179.4 21.1
+	name = RTSZombie_13
+	editorLayer = "Root Layer\\Units"
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 265
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = -5.5 -147.7 18.4
+	name = RTSZombie_0
 	editorLayer = "Root Layer\\Units"
 	tags
 	{

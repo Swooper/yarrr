@@ -1,0 +1,20 @@
+type RTSZombieDead
+{
+	class = Corpse
+	lifeTime = 10
+	physicsModel = "Types\\Units\\Zombie\\ZombieDead\\ZombieDead.physics"
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Types\\Units\\Zombie\\Zombie.mesh"
+			castDynamicShadows = True
+			animationTree = "Types\\Units\\Zombie\\ZombieDead\\ZombieDead.animationTree"
+		}
+		particle
+		{
+			particleName = RTSSmallSmokeParticle2
+			position = 0.7 0 0.3
+		}
+	}
+}

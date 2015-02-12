@@ -1,0 +1,57 @@
+type RTSZombie
+{
+	class = RTSCharacter
+	height = 3
+	radius = 0.75
+	maxVelocity = 1.5
+	optimalAttackDistanceRange = 0 40
+	buildCost = 60
+	buildTime = 15
+	initialAI = DefaultRTSUnitAI
+	viewRadius = 70
+	fpsCameraOffset = 0.4 0 1.2
+	healthMax = 150
+	targetPriority = 1
+	substance = Metal
+	soundMinDistance = 10
+	soundMaxDistance = 100
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Types\\Units\\Zombie\\Zombie.mesh"
+			animationTree = "Types\\Units\\Zombie\\Zombie.animationTree"
+			position = 0 0 -1.5
+		}
+		mapObject
+		{
+			type = RTSRobotGun2
+			position = 0.6 -0.3 0
+		}
+	}
+	dieObjects
+	{
+		particle
+		{
+			particleName = RTSExplosionParticle
+		}
+		sound
+		{
+			soundName = ".\\Die.ogg"
+			priority = 0.7
+			minDistance = 10
+			maxDistance = 100
+		}
+		mapObject
+		{
+			type = RTSFumingSplinterBullet
+			alias = randomRotation
+			count = 10
+		}
+		mapObject
+		{
+			type = RTSZombieDead
+			position = 0 0 -1.4
+		}
+	}
+}

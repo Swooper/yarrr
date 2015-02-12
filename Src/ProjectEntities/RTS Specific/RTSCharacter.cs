@@ -26,7 +26,7 @@ namespace ProjectEntities
 		[FieldSerialize]
 		float radius = radiusDefault;
 
-		const float maxVelocityDefault = 5;
+		const float maxVelocityDefault = 150.0f;
 		[FieldSerialize]
 		float maxVelocity = maxVelocityDefault;
 

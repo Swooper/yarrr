@@ -70,10 +70,28 @@ namespace Game
 		bool disableUpdatingCameraScrollBars;
 
 		//
+        bool IsCutSceneEnabled()
+        {
+            return CutSceneManager.Instance != null && CutSceneManager.Instance.CutSceneEnable;
+        }
 
 		protected override void OnAttach()
 		{
 			base.OnAttach();
+
+            //CutSceneManager specific
+            if (CutSceneManager.Instance != null)
+            {
+                CutSceneManager.Instance.CutSceneEnableChange += delegate(CutSceneManager manager)
+                {
+                    if (manager.CutSceneEnable)
+                    {
+                        //Cut scene activated. All keys and buttons need to reset.
+                        EngineApp.Instance.KeysAndMouseButtonUpAll();
+                        GameControlsManager.Instance.DoKeyUpAll();
+                    }
+                };
+            }
 
 			EngineApp.Instance.KeysAndMouseButtonUpAll();
 
@@ -88,7 +106,17 @@ namespace Game
 
 			( (Button)hudControl.Controls[ "Exit" ] ).Click += delegate( Button sender )
 			{
-				GameWorld.Instance.NeedChangeMap( "Maps\\MainDemo\\Map.map", "Teleporter_Maps", null );
+			    //GameWorld.Instance.NeedChangeMap( "Maps\\MainDemo\\Map.map", "Teleporter_Maps", null );
+                //CutScene
+               CutSceneManager.Instance.CutSceneEnableChange += delegate( CutSceneManager manager )
+               {
+                   if (manager.CutSceneEnable)
+                   {
+                       //Cut scene activated. All keys and buttons need to reset.
+                       EngineApp.Instance.KeysAndMouseButtonUpAll();
+                       GameControlsManager.Instance.DoKeyUpAll();
+                   }
+               };
 			};
 
 			( (Button)hudControl.Controls[ "Help" ] ).Click += delegate( Button sender )

@@ -4,12 +4,6 @@
         <name>ProjectCommon</name>
     </assembly>
     <members>
-        <member name="T:ProjectCommon.RenderingLowLevelMethodsImpl">
-            <summary>
-            This class is intended only for advanced users. By means this class the developer can change behavior 
-            of getting the list of visible objects in the camera, getting the list of objects for shadow generation.
-            </summary>
-        </member>
         <member name="M:ProjectCommon.DynamicMeshManagerImpl.#ctor(System.Single)">
             <summary>
             
@@ -45,52 +39,6 @@
             <param name="sceneObject"></param>
             <param name="time"></param>
         </member>
-        <member name="T:ProjectCommon.MyNativeDLL">
-            <summary>
-            This class is a example of custom native DLL connection.
-            See \Game\Src\MyNativeDLL for native DLL example source code.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.LDRBloomCompositorInstance">
-            <summary>
-            Bloom for low dynamic range scene post processing compositor instance.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.ColorCorrectionCompositorInstance">
-            <summary>
-            Represents work with the ColorCorrection post effect.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.MotionBlurCompositorInstance">
-            <summary>
-            Represents work with the MotionBlur post effect.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.SSAOCompositorInstance">
-            <summary>
-            Represents work with the SSAO post effect.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.ShowDepthCompositorInstance">
-            <summary>
-            Represents work with the ShowDepth post effect.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.LightScatteringCompositorInstance">
-            <summary>
-            LightScattering scene post processing compositor instance.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.GrayscaleCompositorInstance">
-            <summary>
-            Represents work with the Grayscale post effect.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.HDRCompositorInstance">
-            <summary>
-            HDR scene post processing compositor instance.
-            </summary>
-        </member>
         <member name="M:ProjectCommon.ExampleCustomInputDevice.Init">
             <summary>
             Initialize the device
@@ -110,6 +58,12 @@
         <member name="M:ProjectCommon.ExampleCustomInputDevice.InitDevice">
             <summary>
             Initialize the device and register them in the InputDeviceManager
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.MyNativeDLL">
+            <summary>
+            This class is a example of custom native DLL connection.
+            See \Game\Src\MyNativeDLL for native DLL example source code.
             </summary>
         </member>
         <member name="T:ProjectCommon.GameControlsManager">
@@ -182,33 +136,63 @@
             <b>Don't modify</b>.
             </summary>
         </member>
-        <member name="T:ProjectCommon.VegetationMaterial">
+        <member name="T:ProjectCommon.GameEngineInitialization">
             <summary>
-            Material for grass and trees. Adds wave in the vertex shader.
-            </summary>
-        </member>
-        <member name="T:ProjectCommon.ShaderBaseMaterial">
-            <summary>
-            Base template for shader materials.
-            </summary>
-        </member>
-        <member name="P:ProjectCommon.VegetationMaterial.ReceiveObjectsPositionsFromVertices">
-            <summary>
-            Gets or sets a value which indicates it is necessary to reveice objects 
-            positions from the vertices.
+            Class for execute actions after initialization of the engine.
             </summary>
             <remarks>
-            <para>
-            Usually it is necessary for batched geometry (for waving).
-            </para>
-            <para>
-            Positions will be taken from Type: TextureCoordinates, Index: 4.
-            </para>
+            It is class works in simulation application and editors (Resource Editor, Map Editor).
             </remarks>
+        </member>
+        <member name="T:ProjectCommon.ColorCorrectionCompositorInstance">
+            <summary>
+            Represents work with the ColorCorrection post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.GrayscaleCompositorInstance">
+            <summary>
+            Represents work with the Grayscale post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.FXAACompositorInstance">
+            <summary>
+            Represents work with the ShowDepth post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.LightScatteringCompositorInstance">
+            <summary>
+            LightScattering scene post processing compositor instance.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.ShowDepthCompositorInstance">
+            <summary>
+            Represents work with the ShowDepth post effect.
+            </summary>
         </member>
         <member name="T:ProjectCommon.RadialBlurCompositorInstance">
             <summary>
             Represents work with the RadialBlur post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.SSAOCompositorInstance">
+            <summary>
+            Represents work with the SSAO post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.VignettingCompositorInstance">
+            <summary>
+            Represents work with the Vignetting post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.RenderingLowLevelMethodsImpl">
+            <summary>
+            This class is intended only for advanced users. By means this class the developer can change behavior 
+            of getting the list of visible objects in the camera, getting the list of objects for shadow generation.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.ProfilingToolWindow">
+            <summary>
+            Defines a window class for Profiling Tool.
             </summary>
         </member>
         <member name="T:ProjectCommon.GameMusic">
@@ -233,17 +217,14 @@
             Gets the music channel group.
             </summary>
         </member>
-        <member name="T:ProjectCommon.GameEngineInitialization">
-            <summary>
-            Class for execute actions after initialization of the engine.
-            </summary>
-            <remarks>
-            It is class works in simulation application and editors (Resource Editor, Map Editor).
-            </remarks>
-        </member>
         <member name="T:ProjectCommon.FPSWeaponMaterial">
             <summary>
             Material for correct rendering of weapons in a FPS mode.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.ShaderBaseMaterial">
+            <summary>
+            Base template for shader materials.
             </summary>
         </member>
         <member name="T:ProjectCommon.SimpleExampleMaterial">
@@ -251,29 +232,48 @@
             Simple example of high level material.
             </summary>
         </member>
-        <member name="T:ProjectCommon.HeatVisionCompositorInstance">
+        <member name="T:ProjectCommon.VegetationMaterial">
             <summary>
-            Represents work with the HeatVision post effect.
+            Material for grass and trees. Adds wave in the vertex shader.
             </summary>
         </member>
-        <member name="T:ProjectCommon.ProfilingToolWindow">
+        <member name="P:ProjectCommon.VegetationMaterial.ReceiveObjectsPositionsFromVertices">
             <summary>
-            Defines a window class for Profiling Tool.
+            Gets or sets a value which indicates it is necessary to reveice objects 
+            positions from the vertices.
             </summary>
-        </member>
-        <member name="T:ProjectCommon.FXAACompositorInstance">
-            <summary>
-            Represents work with the ShowDepth post effect.
-            </summary>
+            <remarks>
+            <para>
+            Usually it is necessary for batched geometry (for waving).
+            </para>
+            <para>
+            Positions will be taken from Type: TextureCoordinates, Index: 4.
+            </para>
+            </remarks>
         </member>
         <member name="T:ProjectCommon.BlurCompositorInstance">
             <summary>
             GaussianBlur scene post processing compositor instance.
             </summary>
         </member>
-        <member name="T:ProjectCommon.VignettingCompositorInstance">
+        <member name="T:ProjectCommon.LDRBloomCompositorInstance">
             <summary>
-            Represents work with the Vignetting post effect.
+            Bloom for low dynamic range scene post processing compositor instance.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.HeatVisionCompositorInstance">
+            <summary>
+            Represents work with the HeatVision post effect.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.HDRCompositorInstance">
+            <summary>
+            HDR scene post processing compositor instance.
+            </summary>
+        </member>
+        <member name="T:ProjectCommon.MotionBlurCompositorInstance">
+            <summary>
+            Represents work with the MotionBlur post effect.
             </summary>
         </member>
     </members>

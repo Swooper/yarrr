@@ -9,8 +9,8 @@ windSpeed = 1
 resetYCoordinateForDynamicBodies = False
 destroyObjectsBelowHeight = -500
 ambientLight = 0.2 0.2 0.2
-editorCameraPosition = 10.41694 -191.323 62.14499
-editorCameraDirection = 1.973129 -0.847308
+editorCameraPosition = 19.20426 -55.22037 56.08147
+editorCameraDirection = 1.836036 -0.6288105
 shadowColor = 1 1 1
 shadowPSSMSplitFactors = 0.1 0.4
 logicSystemManager = 3
@@ -84,7 +84,7 @@ entity
 					type = LogicWhileAction
 					uin = 7
 					conditionAction = 41
-					actions = 42 45 47 50 52 54 57
+					actions = 42 230 45 47 50 52 54 57
 					tags
 					{
 					}
@@ -273,8 +273,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 25
-							subscriptionsToDeletionEvent = 179
-							entity = 179
+							subscriptionsToDeletionEvent = 162
+							entity = 162
 							tags
 							{
 							}
@@ -283,8 +283,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 26
-							subscriptionsToDeletionEvent = 179
-							entity = 179
+							subscriptionsToDeletionEvent = 162
+							entity = 162
 							tags
 							{
 							}
@@ -579,8 +579,8 @@ entity
 						{
 							type = LogicCallGetEntityMethodAction
 							uin = 51
-							subscriptionsToDeletionEvent = 179
-							entity = 179
+							subscriptionsToDeletionEvent = 162
+							entity = 162
 							tags
 							{
 							}
@@ -673,6 +673,48 @@ entity
 							}
 						}
 					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 230
+						className = CutSceneManager
+						methodName = FadeInOut
+						parameterActions = 229 228
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 229
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 228
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
 				}
 				entity
 				{
@@ -702,6 +744,783 @@ entity
 						value = True
 						tags
 						{
+						}
+					}
+				}
+			}
+		}
+		entity
+		{
+			type = LogicEntityClass
+			uin = 209
+			subscriptionsToDeletionEvent = 207
+			entityClassName = Region
+			className = BeginingCutscene
+			customScriptCodeCreated = False
+			tags
+			{
+			}
+			entity
+			{
+				type = LogicDesignerMethod
+				uin = 210
+				actions = 220
+				methodName = ObjectIn
+				returnType = System.Void
+				parameters = 211
+				isEntityEventMethod = True
+				tags
+				{
+				}
+				entity
+				{
+					type = LogicParameter
+					uin = 211
+					parameterType = Engine.MapSystem.MapObject
+					parameterName = obj
+					tags
+					{
+					}
+				}
+				entity
+				{
+					type = LogicIfThenElseAction
+					uin = 220
+					conditionAction = 231
+					trueActions = 216 215 221 224 226 214
+					falseActions = 
+					tags
+					{
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 214
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 213
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 213
+							valueAction = 212
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 212
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 226
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 227
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 227
+							valueType = System.Single
+							value = 10
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 224
+						className = CutSceneManager
+						methodName = SetCamera
+						parameterActions = 225
+						parameterTypeNames
+						{
+							item
+							{
+								value = MapObject
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
+							uin = 225
+							subscriptionsToDeletionEvent = 162
+							entity = 162
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 221
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 222
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 222
+							valueAction = 223
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 223
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 215
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 217
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 217
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 216
+						className = CutSceneManager
+						methodName = FadeInOut
+						parameterActions = 218 219
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 218
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 219
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicGetConstantValueAction
+						uin = 231
+						valueType = System.Boolean
+						value = True
+						tags
+						{
+						}
+					}
+				}
+			}
+		}
+		entity
+		{
+			type = LogicEntityClass
+			uin = 232
+			entityClassName = World
+			className = Beginning
+			customScriptCodeCreated = False
+			tags
+			{
+			}
+			entity
+			{
+				type = LogicDesignerMethod
+				uin = 233
+				actions = 234
+				methodName = Create
+				returnType = System.Void
+				parameters = 
+				isEntityEventMethod = True
+				tags
+				{
+				}
+				entity
+				{
+					type = LogicIfThenElseAction
+					uin = 234
+					conditionAction = 262
+					trueActions = 263 266 268 271 273 275
+					falseActions = 
+					tags
+					{
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 235
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 239
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 236
+							valueAction = 238
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 237
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 238
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 239
+							valueAction = 240
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 240
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 241
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 243
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 242
+							valueType = System.Single
+							value = 10
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 243
+							valueType = System.Single
+							value = 10
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 244
+						className = CutSceneManager
+						methodName = SetCamera
+						parameterActions = 246
+						parameterTypeNames
+						{
+							item
+							{
+								value = MapObject
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
+							uin = 245
+							subscriptionsToDeletionEvent = 162
+							entity = 162
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
+							uin = 246
+							subscriptionsToDeletionEvent = 162
+							entity = 162
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 247
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 251
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 248
+							valueAction = 250
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 249
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 250
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 251
+							valueAction = 252
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 252
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 253
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 255
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 254
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 255
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 256
+						className = CutSceneManager
+						methodName = FadeInOut
+						parameterActions = 259 260
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 257
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 258
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 259
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 260
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicGetConstantValueAction
+						uin = 261
+						valueType = System.Boolean
+						value = True
+						tags
+						{
+						}
+					}
+					entity
+					{
+						type = LogicGetConstantValueAction
+						uin = 262
+						valueType = System.Boolean
+						value = True
+						tags
+						{
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 263
+						className = CutSceneManager
+						methodName = FadeInOut
+						parameterActions = 264 265
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 264
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 265
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 266
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 267
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 267
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 268
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 269
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 269
+							valueAction = 270
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 270
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 271
+						className = CutSceneManager
+						methodName = SetCamera
+						parameterActions = 272
+						parameterTypeNames
+						{
+							item
+							{
+								value = MapObject
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
+							uin = 272
+							subscriptionsToDeletionEvent = 162
+							entity = 162
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 273
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 274
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 274
+							valueType = System.Single
+							value = 10
+							tags
+							{
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 275
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 276
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 276
+							valueAction = 277
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 277
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
 						}
 					}
 				}
@@ -875,7 +1694,7 @@ entity
 	uin = 67
 	classPrompt = SpawnPoint
 	defaultPoint = False
-	position = 0 0 0
+	position = 0.6693573 -0.7175255 5.405249
 	name = SpawnPoint_0
 	tags
 	{
@@ -994,22 +1813,8 @@ entity
 }
 entity
 {
-	type = RTSRobot
-	uin = 75
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = -6.339796 -153.589 18.11521
-	name = RTSRobot_5
-	tags
-	{
-	}
-}
-entity
-{
 	type = RTSFactionManager
-	uin = 76
+	uin = 75
 	classPrompt = RTSFactionManager
 	factions
 	{
@@ -1031,7 +1836,7 @@ entity
 entity
 {
 	type = RTSHeadquaters
-	uin = 77
+	uin = 76
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1046,7 +1851,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 78
+	uin = 77
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1060,7 +1865,7 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 79
+	uin = 78
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = GoodFaction
@@ -1075,7 +1880,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 80
+	uin = 79
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 8.9 -142.5 16.5
@@ -1088,7 +1893,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 81
+	uin = 80
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -14.2 -172.5 16.6
@@ -1101,7 +1906,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 82
+	uin = 81
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 25.2 -214.5 17.8
@@ -1114,7 +1919,7 @@ entity
 entity
 {
 	type = DestructibleHouse
-	uin = 83
+	uin = 82
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -4.4 -203.6 16.5
@@ -1127,7 +1932,7 @@ entity
 entity
 {
 	type = VillageCart
-	uin = 84
+	uin = 83
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 3.8 -179.3 17.5
@@ -1139,7 +1944,7 @@ entity
 entity
 {
 	type = VillageCart2
-	uin = 85
+	uin = 84
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -4.700001 -182.3 17.3
@@ -1152,7 +1957,7 @@ entity
 entity
 {
 	type = VillageCart2
-	uin = 86
+	uin = 85
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 10.1 -153.6 17.2
@@ -1164,7 +1969,7 @@ entity
 entity
 {
 	type = VillageSign
-	uin = 87
+	uin = 86
 	classPrompt = MapObject
 	position = -11.5 -115.1 17.9
 	name = VillageSign_0
@@ -1175,7 +1980,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 88
+	uin = 87
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -1.6 -191.2 17.3
@@ -1187,7 +1992,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 89
+	uin = 88
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -10.2 -187.8 17.3
@@ -1200,7 +2005,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 90
+	uin = 89
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -8.5 -183.9 17.3
@@ -1213,7 +2018,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 91
+	uin = 90
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -2.8 -185.2 17.3
@@ -1226,7 +2031,7 @@ entity
 entity
 {
 	type = VillageStrawBale
-	uin = 92
+	uin = 91
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -9.3 -192.5 17.3
@@ -1238,7 +2043,7 @@ entity
 entity
 {
 	type = VillageTable
-	uin = 93
+	uin = 92
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 4.2 -194 17.1
@@ -1250,7 +2055,7 @@ entity
 entity
 {
 	type = VillageTable2
-	uin = 94
+	uin = 93
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -2.6 -169 17.1
@@ -1262,7 +2067,7 @@ entity
 entity
 {
 	type = ExplosionBarrel
-	uin = 95
+	uin = 94
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 4.2 -179.4 18.4
@@ -1274,7 +2079,7 @@ entity
 entity
 {
 	type = ExplosionBarrel
-	uin = 96
+	uin = 95
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 14.8 -159.6 18.3
@@ -1286,7 +2091,7 @@ entity
 entity
 {
 	type = WindMill
-	uin = 97
+	uin = 96
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = -26 -160.2 16.2
@@ -1299,7 +2104,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 98
+	uin = 97
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 13.9 -210.3 17.8
@@ -1311,7 +2116,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 99
+	uin = 98
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 8.400001 -210.3 17.8
@@ -1323,7 +2128,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 100
+	uin = 99
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 9.3 -216.7 18.4
@@ -1335,7 +2140,7 @@ entity
 entity
 {
 	type = VillageApiaryHive
-	uin = 101
+	uin = 100
 	classPrompt = Dynamic
 	healthFactorAtBeginning = 1
 	position = 13.9 -216 18
@@ -1347,7 +2152,7 @@ entity
 entity
 {
 	type = TigerTank
-	uin = 102
+	uin = 101
 	classPrompt = Tank
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1362,7 +2167,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 103
+	uin = 102
 	classPrompt = MapObject
 	position = -20.5 -193.4 16.7
 	tags
@@ -1372,7 +2177,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 104
+	uin = 103
 	classPrompt = MapObject
 	position = 11.7 -223.8 17.9
 	tags
@@ -1382,7 +2187,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 105
+	uin = 104
 	classPrompt = MapObject
 	position = 45.5 -222.1 16.6
 	tags
@@ -1392,7 +2197,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 106
+	uin = 105
 	classPrompt = MapObject
 	position = 45.6 -242.3 15.4
 	tags
@@ -1402,7 +2207,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 107
+	uin = 106
 	classPrompt = MapObject
 	position = 79.3 -234 17.3
 	tags
@@ -1412,7 +2217,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 108
+	uin = 107
 	classPrompt = MapObject
 	position = 144.6 -313.6 0.9
 	tags
@@ -1422,7 +2227,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 109
+	uin = 108
 	classPrompt = MapObject
 	position = 171.5 -323.5 1
 	tags
@@ -1432,7 +2237,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 110
+	uin = 109
 	classPrompt = MapObject
 	position = 170.9 -281 5.7
 	tags
@@ -1442,7 +2247,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 111
+	uin = 110
 	classPrompt = MapObject
 	position = 157.9 -142.2 15
 	tags
@@ -1452,7 +2257,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 112
+	uin = 111
 	classPrompt = MapObject
 	position = 98.6 -165.8 20.5
 	tags
@@ -1462,7 +2267,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 113
+	uin = 112
 	classPrompt = MapObject
 	position = 93.1 -181.8 22
 	tags
@@ -1472,7 +2277,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 114
+	uin = 113
 	classPrompt = MapObject
 	position = 187.2 -273.8 9.8
 	tags
@@ -1482,7 +2287,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 115
+	uin = 114
 	classPrompt = MapObject
 	position = 151.8 -253.9 7.7
 	tags
@@ -1492,7 +2297,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 116
+	uin = 115
 	classPrompt = MapObject
 	position = -30.1 -182.7 17.2
 	tags
@@ -1502,7 +2307,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 117
+	uin = 116
 	classPrompt = MapObject
 	position = -1.4 -218 18.8
 	tags
@@ -1512,7 +2317,7 @@ entity
 entity
 {
 	type = Tree06A
-	uin = 118
+	uin = 117
 	classPrompt = MapObject
 	position = -15.1 -212.4 17.8
 	rotation = 0 0 -0.7215207 0.6923929
@@ -1523,7 +2328,7 @@ entity
 entity
 {
 	type = Tree08A
-	uin = 119
+	uin = 118
 	classPrompt = MapObject
 	position = -24.9 -185.2 16.5
 	tags
@@ -1533,7 +2338,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 120
+	uin = 119
 	classPrompt = MapObject
 	position = 73 -198.6 24
 	tags
@@ -1543,7 +2348,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 121
+	uin = 120
 	classPrompt = MapObject
 	position = 96.8 -195.6 24.2
 	tags
@@ -1553,7 +2358,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 122
+	uin = 121
 	classPrompt = MapObject
 	position = 147.9 -283.7 2.5
 	tags
@@ -1563,7 +2368,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 123
+	uin = 122
 	classPrompt = MapObject
 	position = 112.9 -307 5.2
 	tags
@@ -1573,7 +2378,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 124
+	uin = 123
 	classPrompt = MapObject
 	position = 122.9 -270.2 1.7
 	tags
@@ -1583,7 +2388,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 125
+	uin = 124
 	classPrompt = MapObject
 	position = 164.4 -251.9 13.4
 	tags
@@ -1593,7 +2398,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 126
+	uin = 125
 	classPrompt = MapObject
 	position = 191.5 -242.6 19.4
 	tags
@@ -1603,7 +2408,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 127
+	uin = 126
 	classPrompt = MapObject
 	position = 24 -120.2 17.7
 	tags
@@ -1613,7 +2418,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 128
+	uin = 127
 	classPrompt = MapObject
 	position = -44.2 -45.2 0.3
 	tags
@@ -1623,7 +2428,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 129
+	uin = 128
 	classPrompt = MapObject
 	position = -12.3 -96.2 13.4
 	tags
@@ -1633,7 +2438,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 130
+	uin = 129
 	classPrompt = MapObject
 	position = 19.6 -79.9 11.8
 	tags
@@ -1643,7 +2448,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 131
+	uin = 130
 	classPrompt = MapObject
 	position = 58.2 -100.9 19.5
 	tags
@@ -1653,7 +2458,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 132
+	uin = 131
 	classPrompt = MapObject
 	position = 76.7 -54.6 0.6999999
 	tags
@@ -1663,7 +2468,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 133
+	uin = 132
 	classPrompt = MapObject
 	position = 46.2 -89.2 18.4
 	tags
@@ -1673,7 +2478,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 134
+	uin = 133
 	classPrompt = MapObject
 	position = 86.7 -84.1 5.4
 	tags
@@ -1683,7 +2488,7 @@ entity
 entity
 {
 	type = Tree01A
-	uin = 135
+	uin = 134
 	classPrompt = MapObject
 	position = 59 -1.7 2.2
 	tags
@@ -1693,7 +2498,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 136
+	uin = 135
 	classPrompt = MapObject
 	position = 83.6 -73.9 1.299999
 	tags
@@ -1703,7 +2508,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 137
+	uin = 136
 	classPrompt = MapObject
 	position = 78.3 -37.2 0.8000002
 	tags
@@ -1713,7 +2518,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 138
+	uin = 137
 	classPrompt = MapObject
 	position = 36.9 -63.7 14.2
 	tags
@@ -1723,7 +2528,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 139
+	uin = 138
 	classPrompt = MapObject
 	position = 65.9 -88 19.1
 	tags
@@ -1733,7 +2538,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 140
+	uin = 139
 	classPrompt = MapObject
 	position = 28.7 -91.5 14.3
 	tags
@@ -1743,7 +2548,7 @@ entity
 entity
 {
 	type = Tree02A
-	uin = 141
+	uin = 140
 	classPrompt = MapObject
 	position = -14.3 -72.3 5.200001
 	tags
@@ -1753,7 +2558,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 142
+	uin = 141
 	classPrompt = MapObject
 	position = -40.8 -22.7 0.4000001
 	tags
@@ -1763,7 +2568,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 143
+	uin = 142
 	classPrompt = MapObject
 	position = -18.2 -51.9 0.3000001
 	tags
@@ -1773,7 +2578,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 144
+	uin = 143
 	classPrompt = MapObject
 	position = -30.2 -78.5 5
 	tags
@@ -1783,7 +2588,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 145
+	uin = 144
 	classPrompt = MapObject
 	position = -17.6 -86.1 10.9
 	tags
@@ -1793,7 +2598,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 146
+	uin = 145
 	classPrompt = MapObject
 	position = 17.4 -55.1 3.8
 	tags
@@ -1803,7 +2608,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 147
+	uin = 146
 	classPrompt = MapObject
 	position = 51 -80.8 17.9
 	tags
@@ -1813,7 +2618,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 148
+	uin = 147
 	classPrompt = MapObject
 	position = 59.5 -29.8 0.1999998
 	tags
@@ -1823,7 +2628,7 @@ entity
 entity
 {
 	type = Tree03A
-	uin = 149
+	uin = 148
 	classPrompt = MapObject
 	position = 41.2 -47.5 5.1
 	tags
@@ -1833,7 +2638,7 @@ entity
 entity
 {
 	type = Tree04A
-	uin = 150
+	uin = 149
 	classPrompt = MapObject
 	position = 30.5 -71.10001 14.7
 	tags
@@ -1843,7 +2648,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 151
+	uin = 150
 	classPrompt = MapObject
 	position = 54.3 -69.6 13.8
 	tags
@@ -1853,7 +2658,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 152
+	uin = 151
 	classPrompt = MapObject
 	position = 55.5 -17 0
 	tags
@@ -1863,7 +2668,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 153
+	uin = 152
 	classPrompt = MapObject
 	position = 61.8 -45.2 0.0999999
 	tags
@@ -1873,7 +2678,7 @@ entity
 entity
 {
 	type = Tree05A
-	uin = 154
+	uin = 153
 	classPrompt = MapObject
 	position = 31 -55.5 8.699999
 	tags
@@ -1883,7 +2688,7 @@ entity
 entity
 {
 	type = Tree08A
-	uin = 155
+	uin = 154
 	classPrompt = MapObject
 	position = 46.3 -34.2 -0.3
 	tags
@@ -1893,7 +2698,7 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 156
+	uin = 155
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1907,7 +2712,7 @@ entity
 entity
 {
 	type = RTSHeadquaters
-	uin = 157
+	uin = 156
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1922,7 +2727,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 158
+	uin = 157
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1936,7 +2741,7 @@ entity
 entity
 {
 	type = RTSFactory
-	uin = 159
+	uin = 158
 	classPrompt = RTSBuilding
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1951,7 +2756,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 160
+	uin = 159
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1965,7 +2770,7 @@ entity
 entity
 {
 	type = RTSMine
-	uin = 161
+	uin = 160
 	classPrompt = RTSMine
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
@@ -1978,233 +2783,8 @@ entity
 }
 entity
 {
-	type = RTSRobot
-	uin = 162
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 202.5 -167.2 21.1
-	name = RTSRobot_6
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 163
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 204.7 -173.4 21.1
-	name = RTSRobot_7
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 164
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 205.7 -180 21.1
-	name = RTSRobot_8
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 165
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 211.7 -178.6 21.1
-	name = RTSRobot_9
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 166
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 213.2 -173.3 21.1
-	name = RTSRobot_10
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 167
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 210.5 -167.6 21.1
-	name = RTSRobot_11
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 168
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 206.6 -163.2 21.1
-	name = RTSRobot_12
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 169
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 158.4 -196.5 21.1
-	name = RTSRobot_13
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 170
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 158.2 -190 21.1
-	name = RTSRobot_14
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 171
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 150 -191.4 21.9
-	name = RTSRobot_15
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 172
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 96.9 -220.6 21.9
-	name = RTSRobot_16
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 173
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 88.1 -220.6 22.7
-	name = RTSRobot_17
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 174
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 91.3 -211.9 24.3
-	name = RTSRobot_18
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 175
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialAI = DefaultRTSUnitAI
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 4 -85.4 13.4
-	name = RTSRobot_19
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 176
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 3.9 -167.5 18.4
-	name = RTSRobot_20
-	tags
-	{
-	}
-}
-entity
-{
-	type = RTSRobot
-	uin = 177
-	classPrompt = RTSCharacter
-	intellectShouldDeleteAfterDetach = False
-	initialFaction = BadFaction
-	healthFactorAtBeginning = 1
-	position = 6.4 -155.4 18.4
-	name = RTSRobot_21
-	tags
-	{
-	}
-}
-entity
-{
 	type = CutSceneManager
-	uin = 178
+	uin = 161
 	classPrompt = CutSceneManager
 	tags
 	{
@@ -2213,14 +2793,14 @@ entity
 entity
 {
 	type = MapCameraCurve
-	uin = 179
+	uin = 162
 	classPrompt = MapCameraCurve
-	subscriptionsToDeletionEvent = 181 182 183 184 185 186 187 188 189 190 191 25 26 51
+	subscriptionsToDeletionEvent = 164 165 166 167 168 169 170 171 172 173 174 25 26 51 225 245 246 272
 	fov = 0
 	curveType = UniformCubicSpline
-	points = 179 182 183 184 181 185 186 187 188 189 190 191
+	points = 162 165 166 167 164 168 169 170 171 172 173 174
 	roundedLineCurveCurvatureRadius = 1
-	owner = 179
+	owner = 162
 	time = 0
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 3.542077 52.34315 19.83427
@@ -2233,7 +2813,7 @@ entity
 entity
 {
 	type = DecorativeObjectManager
-	uin = 180
+	uin = 163
 	classPrompt = DecorativeObjectManager
 	enabled = True
 	visible = True
@@ -2249,11 +2829,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 181
+	uin = 164
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 4
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -7.751287 -135.7649 21.91252
@@ -2265,11 +2845,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 182
+	uin = 165
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 1
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -3.483391 -16.54187 8.623007
@@ -2281,11 +2861,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 183
+	uin = 166
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 2
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = -8.130315 -55.08653 13.75655
@@ -2297,11 +2877,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 184
+	uin = 167
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 3
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 0.5104914 -97.06129 21.6669
@@ -2313,11 +2893,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 185
+	uin = 168
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 5
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 6.215713 -184.2827 25.89234
@@ -2329,11 +2909,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 186
+	uin = 169
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 6
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 38.85761 -209.5849 31.30385
@@ -2345,11 +2925,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 187
+	uin = 170
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 7
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 85.60934 -249.7901 36.91574
@@ -2361,11 +2941,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 188
+	uin = 171
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 8
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 142.5023 -250.4006 36.4761
@@ -2377,11 +2957,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 189
+	uin = 172
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 9
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 218.6827 -228.0686 41.55909
@@ -2393,11 +2973,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 190
+	uin = 173
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 10
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 267.7705 -195.8567 46.82981
@@ -2409,11 +2989,11 @@ entity
 entity
 {
 	type = MapCameraCurvePoint
-	uin = 191
+	uin = 174
 	classPrompt = MapCameraCurvePoint
-	subscriptionsToDeletionEvent = 179
+	subscriptionsToDeletionEvent = 162
 	fov = 0
-	owner = 179
+	owner = 162
 	time = 11
 	roundedLineCurveOverrideCurvatureRadius = -1
 	position = 266.0423 -165.5749 46.03639
@@ -2425,13 +3005,224 @@ entity
 entity
 {
 	type = RTSZombie
-	uin = 192
+	uin = 175
 	classPrompt = RTSCharacter
 	intellectShouldDeleteAfterDetach = False
 	initialFaction = BadFaction
 	healthFactorAtBeginning = 1
-	position = -4.3 -140.7 18.4
+	position = -4.3 -77.57223 11.05
 	name = RTSZombie_0
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 176
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 202.2545 -172.1378 21.07102
+	rotation = 0 0 -0.8341511 0.551536
+	name = RTSZombie_6
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 177
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 198.7598 -178.529 21.07353
+	rotation = 0 0 -0.7264307 0.6872398
+	name = RTSZombie_1
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 178
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 190.703 -178.5863 21.07225
+	rotation = 0 0 -0.9631356 0.2690164
+	name = RTSZombie_2
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 179
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 196.5747 -172.6844 21.07188
+	rotation = 0 0 -0.2728051 -0.9620693
+	name = RTSZombie_3
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 180
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 63.97068 -212.2451 22.30646
+	rotation = 0 0 -0.315575 0.9489006
+	name = RTSZombie_4
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 181
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 68.74667 -211.0243 23.13168
+	rotation = 0 0 -0.8911883 0.4536336
+	name = RTSZombie_5
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 182
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 8.958645 -180.9522 18.47603
+	rotation = 0 0 -0.7116716 -0.7025123
+	name = RTSZombie_7
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 183
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 9.52198 -175.127 18.65819
+	rotation = 0 0 -0.9552981 -0.2956441
+	name = RTSZombie_8
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 184
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = BadFaction
+	healthFactorAtBeginning = 1
+	position = 12.58116 -177.3462 19.31842
+	rotation = 0 0 -0.9443289 0.329003
+	name = RTSZombie_9
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSZombie
+	uin = 185
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = -4.443679 -126.8279 18.3628
+	rotation = 0 0 -0.2908731 0.9567617
+	name = RTSZombie_10
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 186
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = -8.620784 -12.85535 1.712181
+	rotation = 0 0 -0.7074062 0.7068073
+	name = RTSRobot_5
+	tags
+	{
+	}
+}
+entity
+{
+	type = RTSRobot
+	uin = 187
+	classPrompt = RTSCharacter
+	intellectShouldDeleteAfterDetach = False
+	initialFaction = GoodFaction
+	healthFactorAtBeginning = 1
+	position = -5.307811 -19.90563 1.694035
+	rotation = 0 0 -0.4713896 0.881925
+	name = RTSRobot_6
+	tags
+	{
+	}
+}
+entity
+{
+	type = Region
+	uin = 207
+	classPrompt = Region
+	subscriptionsToDeletionEvent = 209
+	enabled = True
+	shapeType = Box
+	filter = OnlyDynamicBodies
+	position = 2.327123 -3.051019 2.050669
+	rotation = 0 0 -0.9569077 -0.2903922
+	scale = 10 10 10
+	name = Region_0
+	logicClass = 209
+	checkType = Bounds
+	tags
+	{
+	}
+}
+entity
+{
+	type = HelperPoint
+	uin = 208
+	classPrompt = MapObject
+	position = 24.66369 40.89436 1.814385
+	rotation = 0 0 -0.809286 0.5874148
+	name = HelperPoint_0
 	tags
 	{
 	}

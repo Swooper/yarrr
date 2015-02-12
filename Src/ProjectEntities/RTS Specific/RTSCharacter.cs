@@ -248,7 +248,7 @@ namespace ProjectEntities
 				Rotation = rot;
 
 				Vec2 dirVector = diff.GetNormalize();
-				Vec2 dirStep = dirVector * ( Type.MaxVelocity * TickDelta );
+				Vec2 dirStep = dirVector * ( Type.MaxVelocity * TickDelta * 3); //Speed of the unit
 
 				Vec2 newPos = Position.ToVec2() + dirStep;
 

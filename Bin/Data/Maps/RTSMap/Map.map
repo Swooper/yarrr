@@ -1,6 +1,7 @@
 type = GameMap
 uin = 2
 classPrompt = GameMap
+subscriptionsToDeletionEvent = 157
 gameType = RTS
 gameMusic = "Sounds\\Music\\Game.ogg"
 windDirection = 0
@@ -18,6 +19,7 @@ staticBatchingPhysicsEnabledInMapEditor = False
 staticBatchingPhysicsEnabledInSimulation = False
 staticBatchingGridCellSize = 30 30 30
 staticBatchingFilterByMaxTriangleCount = 512
+logicClass = 157
 shadowTechnique = ShadowmapMedium
 sceneGraphSettings
 {
@@ -56,9 +58,11 @@ entity
 		}
 		entity
 		{
-			type = LogicClass
+			type = LogicEntityClass
 			uin = 157
-			className = StartingFlythrough
+			subscriptionsToDeletionEvent = 2
+			entityClassName = Map
+			className = MapFly
 			customScriptCodeCreated = False
 			tags
 			{
@@ -66,9 +70,9 @@ entity
 			entity
 			{
 				type = LogicDesignerMethod
-				uin = 160
-				actions = 174
-				methodName = Flythrough
+				uin = 158
+				actions = 212 159
+				methodName = OnLoad
 				returnType = System.Void
 				parameters = 
 				isEntityEventMethod = False
@@ -77,31 +81,77 @@ entity
 				}
 				entity
 				{
-					type = LogicIfThenElseAction
-					uin = 174
-					conditionAction = 175
-					trueActions = 167 170 164 173 171 161
-					falseActions = 
+					type = LogicWhileAction
+					uin = 159
+					conditionAction = 193
+					actions = 194 197 199 202 204 206 209
 					tags
 					{
 					}
 					entity
 					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 175
-						className = Map
-						propertyName = Instance
-						dotPathAction = 176
+						type = LogicGetVariableAction
+						uin = 160
+						variableName = nonLoop
+						tags
+						{
+						}
+					}
+					entity
+					{
+						type = LogicGetVariableAction
+						uin = 161
+						variableName = nonLoop
+						dotPathAction = 165
 						tags
 						{
 						}
 						entity
 						{
-							type = LogicCallNonStaticMethodAction
-							uin = 176
-							methodName = PostCreate
+							type = LogicAssignVariableAction
+							uin = 162
+							valueAction = 164
 							tags
 							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 163
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 164
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+						entity
+						{
+							type = LogicAssignVariableAction
+							uin = 165
+							valueAction = 166
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 166
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
 							}
 						}
 					}
@@ -109,48 +159,6 @@ entity
 					{
 						type = LogicCallStaticSystemMethodAction
 						uin = 167
-						className = CutSceneManager
-						methodName = FadeInOut
-						parameterActions = 166 165
-						parameterTypeNames
-						{
-							item
-							{
-								value = Single
-							}
-							item
-							{
-								value = Single
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 166
-							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 165
-							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 170
 						className = LogicUtils
 						methodName = Wait
 						parameterActions = 169
@@ -167,9 +175,19 @@ entity
 						entity
 						{
 							type = LogicGetConstantValueAction
+							uin = 168
+							valueType = System.Single
+							value = 10
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
 							uin = 169
 							valueType = System.Single
-							value = 1
+							value = 10
 							tags
 							{
 							}
@@ -178,27 +196,56 @@ entity
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 164
+						uin = 170
 						className = CutSceneManager
 						propertyName = CutSceneEnable
-						dotPathAction = 163
+						dotPathAction = 174
 						tags
 						{
 						}
 						entity
 						{
 							type = LogicAssignPropertyAction
-							uin = 163
-							valueAction = 168
+							uin = 171
+							valueAction = 173
 							tags
 							{
 							}
 							entity
 							{
 								type = LogicGetConstantValueAction
-								uin = 168
+								uin = 172
 								valueType = System.Boolean
-								value = True
+								value = False
+								tags
+								{
+								}
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 173
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+						entity
+						{
+							type = LogicAssignPropertyAction
+							uin = 174
+							valueAction = 175
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 175
+								valueType = System.Boolean
+								value = False
 								tags
 								{
 								}
@@ -208,10 +255,10 @@ entity
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 173
+						uin = 176
 						className = CutSceneManager
 						methodName = SetCamera
-						parameterActions = 172
+						parameterActions = 178
 						parameterTypeNames
 						{
 							item
@@ -225,7 +272,17 @@ entity
 						entity
 						{
 							type = LogicCallGetEntityMethodAction
-							uin = 172
+							uin = 177
+							subscriptionsToDeletionEvent = 144
+							entity = 144
+							tags
+							{
+							}
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
+							uin = 178
 							subscriptionsToDeletionEvent = 144
 							entity = 144
 							tags
@@ -236,148 +293,71 @@ entity
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 171
-						className = LogicUtils
-						methodName = Wait
-						parameterActions = 159
-						parameterTypeNames
-						{
-							item
-							{
-								value = Single
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 159
-							valueType = System.Single
-							value = 12
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 161
+						uin = 179
 						className = CutSceneManager
 						propertyName = CutSceneEnable
-						dotPathAction = 162
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicAssignPropertyAction
-							uin = 162
-							valueAction = 158
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 158
-								valueType = System.Boolean
-								value = False
-								tags
-								{
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		entity
-		{
-			type = LogicEntityClass
-			uin = 177
-			entityClassName = Region
-			className = FlyThrough
-			customScriptCodeCreated = False
-			tags
-			{
-			}
-			entity
-			{
-				type = LogicDesignerMethod
-				uin = 179
-				actions = 180
-				methodName = PostCreated
-				returnType = System.Void
-				parameters = 178
-				isEntityEventMethod = True
-				tags
-				{
-				}
-				entity
-				{
-					type = LogicParameter
-					uin = 178
-					parameterType = System.Boolean
-					parameterName = loaded
-					tags
-					{
-					}
-				}
-				entity
-				{
-					type = LogicIfThenElseAction
-					uin = 180
-					conditionAction = 210
-					trueActions = 212 215 217 220 222 224
-					falseActions = 
-					tags
-					{
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 181
-						className = Map
-						propertyName = Instance
 						dotPathAction = 183
 						tags
 						{
 						}
 						entity
 						{
-							type = LogicCallNonStaticMethodAction
-							uin = 182
-							methodName = PostCreate
+							type = LogicAssignPropertyAction
+							uin = 180
+							valueAction = 182
 							tags
 							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 181
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 182
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
 							}
 						}
 						entity
 						{
-							type = LogicCallNonStaticMethodAction
+							type = LogicAssignPropertyAction
 							uin = 183
-							methodName = PostCreate
+							valueAction = 184
 							tags
 							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 184
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
 							}
 						}
 					}
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 184
-						className = CutSceneManager
-						methodName = FadeInOut
-						parameterActions = 187 188
+						uin = 185
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 187
 						parameterTypeNames
 						{
-							item
-							{
-								value = Single
-							}
 							item
 							{
 								value = Single
@@ -385,16 +365,6 @@ entity
 						}
 						tags
 						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 185
-							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
 						}
 						entity
 						{
@@ -416,26 +386,20 @@ entity
 							{
 							}
 						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 188
-							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
-						}
 					}
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 189
-						className = LogicUtils
-						methodName = Wait
-						parameterActions = 191
+						uin = 188
+						className = CutSceneManager
+						methodName = FadeInOut
+						parameterActions = 191 192
 						parameterTypeNames
 						{
+							item
+							{
+								value = Single
+							}
 							item
 							{
 								value = Single
@@ -443,6 +407,16 @@ entity
 						}
 						tags
 						{
+						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 189
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
 						}
 						entity
 						{
@@ -464,78 +438,42 @@ entity
 							{
 							}
 						}
+						entity
+						{
+							type = LogicGetConstantValueAction
+							uin = 192
+							valueType = System.Single
+							value = 1
+							tags
+							{
+							}
+						}
 					}
 					entity
 					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 192
-						className = CutSceneManager
-						propertyName = CutSceneEnable
-						dotPathAction = 196
+						type = LogicGetVariableAction
+						uin = 193
+						variableName = nonLoop
 						tags
 						{
 						}
-						entity
-						{
-							type = LogicAssignPropertyAction
-							uin = 193
-							valueAction = 195
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 194
-								valueType = System.Boolean
-								value = True
-								tags
-								{
-								}
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 195
-								valueType = System.Boolean
-								value = True
-								tags
-								{
-								}
-							}
-						}
-						entity
-						{
-							type = LogicAssignPropertyAction
-							uin = 196
-							valueAction = 197
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 197
-								valueType = System.Boolean
-								value = True
-								tags
-								{
-								}
-							}
-						}
 					}
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 198
+						uin = 194
 						className = CutSceneManager
-						methodName = SetCamera
-						parameterActions = 200
+						methodName = FadeInOut
+						parameterActions = 195 196
 						parameterTypeNames
 						{
 							item
 							{
-								value = MapObject
+								value = Single
+							}
+							item
+							{
+								value = Single
 							}
 						}
 						tags
@@ -543,20 +481,20 @@ entity
 						}
 						entity
 						{
-							type = LogicCallGetEntityMethodAction
-							uin = 199
-							subscriptionsToDeletionEvent = 144
-							entity = 144
+							type = LogicGetConstantValueAction
+							uin = 195
+							valueType = System.Single
+							value = 1
 							tags
 							{
 							}
 						}
 						entity
 						{
-							type = LogicCallGetEntityMethodAction
-							uin = 200
-							subscriptionsToDeletionEvent = 144
-							entity = 144
+							type = LogicGetConstantValueAction
+							uin = 196
+							valueType = System.Single
+							value = 1
 							tags
 							{
 							}
@@ -565,10 +503,10 @@ entity
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 201
+						uin = 197
 						className = LogicUtils
 						methodName = Wait
-						parameterActions = 203
+						parameterActions = 198
 						parameterTypeNames
 						{
 							item
@@ -582,19 +520,67 @@ entity
 						entity
 						{
 							type = LogicGetConstantValueAction
-							uin = 202
+							uin = 198
 							valueType = System.Single
-							value = 12
+							value = 1
 							tags
 							{
 							}
 						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 199
+						className = CutSceneManager
+						propertyName = CutSceneEnable
+						dotPathAction = 200
+						tags
+						{
+						}
 						entity
 						{
-							type = LogicGetConstantValueAction
+							type = LogicAssignPropertyAction
+							uin = 200
+							valueAction = 201
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 201
+								valueType = System.Boolean
+								value = True
+								tags
+								{
+								}
+							}
+						}
+					}
+					entity
+					{
+						type = LogicCallStaticSystemMethodAction
+						uin = 202
+						className = CutSceneManager
+						methodName = SetCamera
+						parameterActions = 203
+						parameterTypeNames
+						{
+							item
+							{
+								value = MapObject
+							}
+						}
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicCallGetEntityMethodAction
 							uin = 203
-							valueType = System.Single
-							value = 12
+							subscriptionsToDeletionEvent = 144
+							entity = 144
 							tags
 							{
 							}
@@ -604,118 +590,25 @@ entity
 					{
 						type = LogicCallStaticSystemMethodAction
 						uin = 204
-						className = CutSceneManager
-						propertyName = CutSceneEnable
-						dotPathAction = 208
+						className = LogicUtils
+						methodName = Wait
+						parameterActions = 205
+						parameterTypeNames
+						{
+							item
+							{
+								value = Single
+							}
+						}
 						tags
 						{
 						}
 						entity
 						{
-							type = LogicAssignPropertyAction
+							type = LogicGetConstantValueAction
 							uin = 205
-							valueAction = 207
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 206
-								valueType = System.Boolean
-								value = False
-								tags
-								{
-								}
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 207
-								valueType = System.Boolean
-								value = False
-								tags
-								{
-								}
-							}
-						}
-						entity
-						{
-							type = LogicAssignPropertyAction
-							uin = 208
-							valueAction = 209
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 209
-								valueType = System.Boolean
-								value = False
-								tags
-								{
-								}
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 210
-						className = Map
-						propertyName = Instance
-						dotPathAction = 211
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicCallNonStaticMethodAction
-							uin = 211
-							methodName = PostCreate
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 212
-						className = CutSceneManager
-						methodName = FadeInOut
-						parameterActions = 213 214
-						parameterTypeNames
-						{
-							item
-							{
-								value = Single
-							}
-							item
-							{
-								value = Single
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 213
 							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 214
-							valueType = System.Single
-							value = 1
+							value = 10
 							tags
 							{
 							}
@@ -724,139 +617,25 @@ entity
 					entity
 					{
 						type = LogicCallStaticSystemMethodAction
-						uin = 215
-						className = LogicUtils
-						methodName = Wait
-						parameterActions = 216
-						parameterTypeNames
-						{
-							item
-							{
-								value = Single
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 216
-							valueType = System.Single
-							value = 1
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 217
+						uin = 206
 						className = CutSceneManager
 						propertyName = CutSceneEnable
-						dotPathAction = 218
+						dotPathAction = 207
 						tags
 						{
 						}
 						entity
 						{
 							type = LogicAssignPropertyAction
-							uin = 218
-							valueAction = 219
+							uin = 207
+							valueAction = 208
 							tags
 							{
 							}
 							entity
 							{
 								type = LogicGetConstantValueAction
-								uin = 219
-								valueType = System.Boolean
-								value = True
-								tags
-								{
-								}
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 220
-						className = CutSceneManager
-						methodName = SetCamera
-						parameterActions = 221
-						parameterTypeNames
-						{
-							item
-							{
-								value = MapObject
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicCallGetEntityMethodAction
-							uin = 221
-							subscriptionsToDeletionEvent = 144
-							entity = 144
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 222
-						className = LogicUtils
-						methodName = Wait
-						parameterActions = 223
-						parameterTypeNames
-						{
-							item
-							{
-								value = Single
-							}
-						}
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicGetConstantValueAction
-							uin = 223
-							valueType = System.Single
-							value = 12
-							tags
-							{
-							}
-						}
-					}
-					entity
-					{
-						type = LogicCallStaticSystemMethodAction
-						uin = 224
-						className = CutSceneManager
-						propertyName = CutSceneEnable
-						dotPathAction = 225
-						tags
-						{
-						}
-						entity
-						{
-							type = LogicAssignPropertyAction
-							uin = 225
-							valueAction = 226
-							tags
-							{
-							}
-							entity
-							{
-								type = LogicGetConstantValueAction
-								uin = 226
+								uin = 208
 								valueType = System.Boolean
 								value = False
 								tags
@@ -865,28 +644,65 @@ entity
 							}
 						}
 					}
-				}
-			}
-			entity
-			{
-				type = LogicDesignerMethod
-				uin = 227
-				actions = 
-				methodName = MapStart
-				returnType = System.Void
-				parameters = 228
-				isEntityEventMethod = False
-				tags
-				{
+					entity
+					{
+						type = LogicGetVariableAction
+						uin = 209
+						variableName = nonLoop
+						dotPathAction = 210
+						tags
+						{
+						}
+						entity
+						{
+							type = LogicAssignVariableAction
+							uin = 210
+							valueAction = 211
+							tags
+							{
+							}
+							entity
+							{
+								type = LogicGetConstantValueAction
+								uin = 211
+								valueType = System.Boolean
+								value = False
+								tags
+								{
+								}
+							}
+						}
+					}
 				}
 				entity
 				{
-					type = LogicParameter
-					uin = 228
-					parameterType = Engine.MapSystem.Map
-					parameterName = map
+					type = LogicDeclareLocalVariableAction
+					uin = 212
+					variableTypeName = Boolean
+					variableName = nonLoop
+					valueAction = 214
 					tags
 					{
+					}
+					entity
+					{
+						type = LogicGetConstantValueAction
+						uin = 213
+						valueType = System.Boolean
+						value = True
+						tags
+						{
+						}
+					}
+					entity
+					{
+						type = LogicGetConstantValueAction
+						uin = 214
+						valueType = System.Boolean
+						value = True
+						tags
+						{
+						}
 					}
 				}
 			}
@@ -2399,7 +2215,7 @@ entity
 	type = MapCameraCurve
 	uin = 144
 	classPrompt = MapCameraCurve
-	subscriptionsToDeletionEvent = 147 148 149 150 151 153 145 154 155 156 152 172 199 200 221
+	subscriptionsToDeletionEvent = 147 148 149 150 151 153 145 154 155 156 152 177 178 203
 	fov = 0
 	curveType = UniformCubicSpline
 	points = 144 148 149 150 147 151 153 145 154 155 156 152
